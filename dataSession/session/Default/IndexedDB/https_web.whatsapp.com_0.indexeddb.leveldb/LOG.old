@@ -1,0 +1,12 @@
+2024/03/08-14:16:36.113 4904 Reusing MANIFEST C:\Users\matti\OneDrive\Desktop\NOVA SITI\LeadSystemFunnel\whatsServer\dataSession\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/03/08-14:16:36.114 4904 Recovering log #83
+2024/03/08-14:16:36.256 4904 Reusing old log C:\Users\matti\OneDrive\Desktop\NOVA SITI\LeadSystemFunnel\whatsServer\dataSession\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000083.log 
+2024/03/08-14:16:53.816 2be4 Level-0 table #88: started
+2024/03/08-14:16:53.842 2be4 Level-0 table #88: 1100106 bytes OK
+2024/03/08-14:16:53.843 2be4 Delete type=0 #83
+2024/03/08-14:16:53.846 2be4 Compacting 1@1 + 1@2 files
+2024/03/08-14:16:53.967 2be4 Generated table #89@1: 66152 keys, 2032516 bytes
+2024/03/08-14:16:53.967 2be4 Compacted 1@1 + 1@2 files => 2032516 bytes
+2024/03/08-14:16:53.968 2be4 compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/03/08-14:16:53.968 2be4 Delete type=2 #85
+2024/03/08-14:16:53.968 2be4 Delete type=2 #88
