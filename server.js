@@ -18,8 +18,8 @@ const client = new Client({
       ]
     }
   });
- //      headless: true,
-const app = express();
+
+  const app = express();
 app.use(express.static(path.join(__dirname, 'client', 'public')));
 
 app.use(express.json({ limit: "10mb" }));
