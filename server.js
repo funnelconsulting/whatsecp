@@ -13,7 +13,7 @@ const client = new Client({
     puppeteer: {
       args: [
           '--no-sandbox',
-          //'--disable-setuid-sandbox',
+          '--disable-setuid-sandbox',
       ]
     }
   });
@@ -40,8 +40,8 @@ client.on('ready', () => {
   console.log('Client is ready!');
   console.log(client);
   client.getChats().then((chats) => {
-    const group1 = chats.filter(c => c.name === "LeadSystem - Arco");
-    //console.log(group1);
+    //const group1 = chats.filter(c => c.name === "LeadSystem - Arco");
+    console.log(chats[0]);
   }).catch((err) => {
       console.error('Si è verificato un errore durante la ricerca della chat:', err);
   });
