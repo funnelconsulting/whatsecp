@@ -29,8 +29,10 @@ app.use(
   })
 );
 
-const port = 8080;
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+const PORT = process.env.PORT || 3080;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
 
 /*WHATSAPP CONNECTION*/
 client.on('qr', (qr) => {
@@ -39,7 +41,7 @@ client.on('qr', (qr) => {
   
 client.on('ready', () => {
   console.log('Client is ready!');
-  console.log(client);
+  //console.log(client);
   client.getChats().then((chats) => {
     //const group1 = chats.filter(c => c.name === "LeadSystem - Arco");
     console.log(chats[0]);
