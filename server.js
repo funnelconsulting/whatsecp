@@ -7,9 +7,9 @@ const qrcode = require('qrcode-terminal');
 const { fstat } = require('fs');
 const { ECP } = require('./ECP');
 const client = new Client({
-    /*authStrategy: new LocalAuth({
+    authStrategy: new LocalAuth({
         dataPath: 'dataSession'
-    }),*/
+    }),
     puppeteer: {
       headless: true,
       args: [
