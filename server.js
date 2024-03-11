@@ -43,14 +43,14 @@ client.on('ready', () => {
   console.log('Client is ready!');
   //console.log(client);
   client.getChats().then((chats) => {
-    //const group1 = chats.filter(c => c.name === "LeadSystem - Arco");
+    const group1 = chats.filter(c => c.name === "LeadSystem - Sharing Lab");
     console.log(chats[0]);
   }).catch((err) => {
       console.error('Si è verificato un errore durante la ricerca della chat:', err);
   });
 });
 
-app.post('/webhook-lead-ecp-notification', async (req, res) => {
+/*app.post('/webhook-lead-ecp-notification', async (req, res) => {
   try {
       const ecpWithLeads = req.body.ecpLeadTracking; 
 
@@ -72,6 +72,30 @@ app.post('/webhook-lead-ecp-notification', async (req, res) => {
               console.log(`ECP non trovato con id: ${ecp.nameECP}`);
           }
       }
+      res.status(200).send('Messaggi inviati con successo agli ECP.');
+  } catch (error) {
+      console.error('Errore durante l\'invio dei messaggi:', error);
+      res.status(500).send('Errore durante l\'invio dei messaggi.');
+  }
+});*/
+
+app.post('/webhook-lead-ecp-notification', async (req, res) => {
+  console.log(req.body)
+  try {
+      const ecpId = req.body.ecpId; 
+      const leads = req.body.leads;
+        const knownEcp = ECP.find(item => item._id === ecpId);
+          if (knownEcp) {
+              const leadMessage = `È entrata una nuova lead! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
+              const { waId } = knownEcp;
+  
+              await client.sendMessage(waId._serialized, leadMessage)
+                  .then(() => console.log("Messaggio inviato a", knownEcp.name, "per la lead:", leads.nome, leads.cognome))
+                  .catch(error => console.error("Errore nell'invio del messaggio:", error));
+              console.log(`Messaggio inviato a ${knownEcp.name}`);
+          } else {
+              console.log(`ECP non trovato con id: ${ecpId}`);
+          }
       res.status(200).send('Messaggi inviati con successo agli ECP.');
   } catch (error) {
       console.error('Errore durante l\'invio dei messaggi:', error);
