@@ -4,5 +4,4 @@
 node_modules
 /.env
 # log files
-dataSession
 .wwebjs_cache
