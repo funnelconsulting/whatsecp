@@ -209,4 +209,34 @@ exports.ECP = [
           _serialized: '120363259768940107@g.us'
         },
       },
+      {
+        _id: "649303e1202cd038c1f241a4", 
+        name:"Ecp Giordani", 
+        groupName: "LeadSystem - Giordani", 
+        waId: {
+          server: 'g.us',
+          user: '120363242608483160',
+          _serialized: '120363242608483160@g.us'
+        },
+      },
+      {
+        _id: "64bfe3f7d6a54ecbab8dd642", 
+        name:"Andolfo s.r.l.", 
+        groupName: "LeadSystem - Andolfo srl", 
+        waId: {
+          server: 'g.us',
+          user: '120363242058805082',
+          _serialized: '120363242058805082@g.us'
+        },
+      },
+      {
+        _id: "6502b20f689e95da2597c28b", 
+        name:"Alma S.C.a.R.L.", 
+        groupName: "LeadSystem - Alma", 
+        waId: {
+          server: 'g.us',
+          user: '120363258676182171',
+          _serialized: '120363258676182171@g.us'
+        },
+      },
   ]
