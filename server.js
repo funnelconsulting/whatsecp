@@ -42,9 +42,10 @@ client.on('qr', (qr) => {
 client.on('ready', () => {
   console.log('Client is ready!');
   //console.log(client);
-  client.getChats().then((chats) => {
-    const group1 = chats.filter(c => c.name === "LeadSystem - Sharing Lab");
-    console.log(chats[0]);
+  client.getChats().then(async(chats) => {
+    const group1 = chats.filter(c => c.name === "LeadSystem - Orientamee");
+    console.log(group1);
+    //await client.sendMessage(group1[0].id._serialized, "Messaggio di prova").then((res) => console.log(res))
   }).catch((err) => {
       console.error('Si è verificato un errore durante la ricerca della chat:', err);
   });
