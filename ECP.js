@@ -200,16 +200,6 @@ exports.ECP = [
         },
       },
       {
-        _id: "65e746abd0854d9a924c4f56", 
-        name:"MY FUTURE INNOVATION ITALIA SRL", 
-        groupName: "LeadSystem - Future Innovation", 
-        waId: {
-          server: 'g.us',
-          user: '120363242088790097',
-          _serialized: '120363242088790097@g.us'
-        },
-      },
-      {
         _id: "65eb458c515cbdb618baa305", 
         name:"Sharing Lab Associazione Culturale e di Promozione Sociale", 
         groupName: "LeadSystem - Sharing Lab", 
