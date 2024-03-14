@@ -1,13 +1,4 @@
-2024/03/13-13:32:45.141 5b30 Reusing MANIFEST C:\Users\matti\OneDrive\Desktop\NOVA SITI\whatsServer\dataSession\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/03/13-13:32:45.141 5b30 Recovering log #182
-2024/03/13-13:32:45.167 5b30 Reusing old log C:\Users\matti\OneDrive\Desktop\NOVA SITI\whatsServer\dataSession\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000182.log 
-2024/03/13-13:32:55.711 58dc Level-0 table #187: started
-2024/03/13-13:32:55.715 58dc Level-0 table #187: 154376 bytes OK
-2024/03/13-13:32:55.716 58dc Delete type=0 #182
-2024/03/13-13:32:55.716 58dc Manual compaction at level-0 from '\x008\x00\x00\x00' @ 72057594037927935 : 1 .. '\x009\x00\x00\x00' @ 0 : 0; will stop at (end)
-2024/03/13-13:32:57.168 5b30 Compacting 1@1 + 1@2 files
-2024/03/13-13:32:57.211 5b30 Generated table #188@1: 37808 keys, 1361864 bytes
-2024/03/13-13:32:57.211 5b30 Compacted 1@1 + 1@2 files => 1361864 bytes
-2024/03/13-13:32:57.211 5b30 compacted to: files[ 0 0 1 0 0 0 0 ]
-2024/03/13-13:32:57.212 5b30 Delete type=2 #184
-2024/03/13-13:32:57.212 5b30 Delete type=2 #187
+2024/03/14-11:55:31.073 4424 Reusing MANIFEST C:\Users\matti\OneDrive\Desktop\NOVA SITI\whatsServer\dataSession\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/03/14-11:55:31.073 4424 Recovering log #206
+2024/03/14-11:55:31.088 4424 Reusing old log C:\Users\matti\OneDrive\Desktop\NOVA SITI\whatsServer\dataSession\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000206.log 
+2024/03/14-11:55:41.627 29a0 Manual compaction at level-0 from '\x00?\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00@\x00\x00\x00' @ 0 : 0; will stop at (end)

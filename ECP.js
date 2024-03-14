@@ -239,4 +239,14 @@ exports.ECP = [
           _serialized: '120363258676182171@g.us'
         },
       },
+      {
+        _id: "64f87300db7efcc74361fe25", 
+        name:"Nova Forma Mentis Srl", 
+        groupName: "LeadSystem - Nova Forma Mentis", 
+        waId: {
+          server: 'g.us',
+          user: '120363259495836543',
+          _serialized: '120363259495836543@g.us'
+        },
+      },
   ]

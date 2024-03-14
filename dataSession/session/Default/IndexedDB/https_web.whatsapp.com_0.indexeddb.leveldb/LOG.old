@@ -1,13 +1,13 @@
-2024/03/13-13:29:43.083 4fc8 Reusing MANIFEST C:\Users\matti\OneDrive\Desktop\NOVA SITI\whatsServer\dataSession\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/03/13-13:29:43.083 4fc8 Recovering log #178
-2024/03/13-13:29:43.107 4fc8 Reusing old log C:\Users\matti\OneDrive\Desktop\NOVA SITI\whatsServer\dataSession\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000178.log 
-2024/03/13-13:29:53.722 4fc8 Level-0 table #183: started
-2024/03/13-13:29:53.726 4fc8 Level-0 table #183: 139345 bytes OK
-2024/03/13-13:29:53.727 4fc8 Delete type=0 #178
-2024/03/13-13:29:53.727 4fc8 Manual compaction at level-0 from '\x007\x00\x00\x00' @ 72057594037927935 : 1 .. '\x008\x00\x00\x00' @ 0 : 0; will stop at (end)
-2024/03/13-13:29:55.223 52b4 Compacting 1@1 + 1@2 files
-2024/03/13-13:29:55.272 52b4 Generated table #184@1: 36225 keys, 1303076 bytes
-2024/03/13-13:29:55.272 52b4 Compacted 1@1 + 1@2 files => 1303076 bytes
-2024/03/13-13:29:55.272 52b4 compacted to: files[ 0 0 1 0 0 0 0 ]
-2024/03/13-13:29:55.272 52b4 Delete type=2 #180
-2024/03/13-13:29:55.272 52b4 Delete type=2 #183
+2024/03/14-11:55:01.265 5778 Reusing MANIFEST C:\Users\matti\OneDrive\Desktop\NOVA SITI\whatsServer\dataSession\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/03/14-11:55:01.265 5778 Recovering log #202
+2024/03/14-11:55:01.311 5778 Reusing old log C:\Users\matti\OneDrive\Desktop\NOVA SITI\whatsServer\dataSession\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000202.log 
+2024/03/14-11:55:11.846 13b4 Level-0 table #207: started
+2024/03/14-11:55:11.850 13b4 Level-0 table #207: 208174 bytes OK
+2024/03/14-11:55:11.851 13b4 Delete type=0 #202
+2024/03/14-11:55:11.851 13b4 Manual compaction at level-0 from '\x00>\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00?\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/03/14-11:55:13.239 2320 Compacting 1@1 + 1@2 files
+2024/03/14-11:55:13.293 2320 Generated table #208@1: 44494 keys, 1596294 bytes
+2024/03/14-11:55:13.293 2320 Compacted 1@1 + 1@2 files => 1596294 bytes
+2024/03/14-11:55:13.293 2320 compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/03/14-11:55:13.293 2320 Delete type=2 #204
+2024/03/14-11:55:13.293 2320 Delete type=2 #207
