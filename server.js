@@ -43,7 +43,7 @@ client.on('ready', () => {
   console.log('Client is ready!');
   //console.log(client);
   client.getChats().then(async(chats) => {
-    const group1 = chats.filter(c => c.name === "LeadSystem - Nova Forma Mentis");
+    const group1 = chats.filter(c => c.name === "LeadSystem - Orientamee");
     console.log(group1);
     //await client.sendMessage(group1[0].id._serialized, "Messaggio di prova").then((res) => console.log(res))
   }).catch((err) => {
