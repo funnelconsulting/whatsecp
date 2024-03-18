@@ -45,7 +45,7 @@ client.on('ready', () => {
   client.getChats().then(async(chats) => {
     const group1 = chats.filter(c => c.name === "LeadSystem - Arco");
     console.log(group1);
-    await client.sendMessage(group1[0].id._serialized, "Messaggio di prova").then((res) => console.log(res))
+    await client.sendMessage(group1[0].id._serialized, "Ciao, come state?").then((res) => console.log(res))
   }).catch((err) => {
       console.error('Si è verificato un errore durante la ricerca della chat:', err);
   });
