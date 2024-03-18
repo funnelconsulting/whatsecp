@@ -4,7 +4,7 @@
   "main": "server.js",
   "homepage": "https://leadsystem.tech",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",

@@ -11,7 +11,7 @@ const client = new Client({
         dataPath: 'dataSession'
     }),
     puppeteer: {
-      //headless: true,
+      headless: true,
       args: [
           '--no-sandbox',
           '--disable-setuid-sandbox',
