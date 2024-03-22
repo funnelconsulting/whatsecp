@@ -249,4 +249,24 @@ exports.ECP = [
           _serialized: '120363259495836543@g.us'
         },
       },
+      {
+        _id: "64c8d506f67b84dfe65a2d8f", 
+        name:"anbi formazione srl", 
+        groupName: "Leadsystem - Anbi", 
+        waId: {
+          server: 'g.us',
+          user: '120363267546264913',
+          _serialized: '120363267546264913@g.us'
+        },
+      },
+      {
+        _id: "65fc594882c0631e41ca0148", 
+        name:"Ditta individuale Clara Artale", 
+        groupName: "LeadSystem - Ditta individuale Clara Artale", 
+        waId: {
+          server: 'g.us',
+          user: '120363250399194893',
+          _serialized: '120363250399194893@g.us'
+        },
+      },
   ]
