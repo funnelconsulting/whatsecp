@@ -269,4 +269,14 @@ exports.ECP = [
           _serialized: '120363250399194893@g.us'
         },
       },
+      {
+        _id: "652d63e0f09b4c216834694f", 
+        name:"Unipegaso (Ares)", 
+        groupName: "LeadSystem - Ares", 
+        waId: {
+          server: 'g.us',
+          user: '120363255292416468',
+          _serialized: '120363255292416468@g.us'
+        },
+      },
   ]
