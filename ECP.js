@@ -279,4 +279,14 @@ exports.ECP = [
           _serialized: '120363255292416468@g.us'
         },
       },
+      {
+        _id: "6601533da9820df168621893", 
+        name:"Agenzia Formativa srl", 
+        groupName: "LeadSystem - Agenzia Formativa", 
+        waId: {
+          server: 'g.us',
+          user: '120363257182881407',
+          _serialized: '120363257182881407@g.us'
+        },
+      },
   ]
