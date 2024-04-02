@@ -289,4 +289,24 @@ exports.ECP = [
           _serialized: '120363257182881407@g.us'
         },
       },
+      {
+        _id: "65ef278d15c0a2807158025e", 
+        name:"ACCADEMIA NAZIONALE PER L’AVVIAMENTO ALLE PROFESSIONI", 
+        groupName: "LeadSystem - Accademia nazionale", 
+        waId: {
+          server: 'g.us',
+          user: '120363260649387123',
+          _serialized: '120363260649387123@g.us'
+        },
+      },
+      {
+        _id: "64e461e3645bd5e76491a758", 
+        name:"Ascom Servizi srl", 
+        groupName: "LeadSystem - Ascom", 
+        waId: {
+          server: 'g.us',
+          user: '120363262126724313',
+          _serialized: '120363262126724313@g.us'
+        },
+      },
   ]
