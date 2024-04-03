@@ -6,3 +6,4 @@ node_modules
 # log files
 dataSession
 .wwebjs_cache
+.wwebjs_auth
