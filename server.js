@@ -88,7 +88,7 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
     }
   });
 
-  app.post('/webhook-leadchatbot-ecp-notification', async (req, res) => {
+  /*app.post('/webhook-leadchatbot-ecp-notification', async (req, res) => {
     console.log(req.body)
     try {
         const ecpId = req.body.ecpId;
@@ -110,9 +110,9 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
         console.error('Errore durante l\'invio dei messaggi:', error);
         res.status(500).send('Errore durante l\'invio dei messaggi.');
     }
-  });
+  });*/
 
-  app.post('/webhook-leadchatbot-ecp-change-app', async (req, res) => {
+  /*app.post('/webhook-leadchatbot-ecp-change-app', async (req, res) => {
     console.log(req.body)
     try {
         const ecpId = req.body.ecpId;
@@ -135,7 +135,7 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
         console.error('Errore durante l\'invio dei messaggi:', error);
         res.status(500).send('Errore durante l\'invio dei messaggi.');
     }
-  });
+  });*/
 
   client.initialize();
 
