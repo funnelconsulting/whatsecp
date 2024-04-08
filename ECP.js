@@ -309,4 +309,14 @@ exports.ECP = [
           _serialized: '120363262126724313@g.us'
         },
       },
+      {
+        _id: "65210d4ae897caf57c9f25c3", 
+        name:"Academy Point Comenius",
+        groupName: "LeadSystem - Academy Point Comenius",
+        waId: {
+          server: 'g.us',
+          user: '120363281091330930',
+          _serialized: '120363281091330930@g.us'
+        },
+      }
   ]
