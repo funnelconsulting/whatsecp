@@ -325,8 +325,8 @@ exports.ECP = [
         groupName: "LeadSystem - Vantaggio s.r.l.",
         waId: {
           server: 'g.us',
-          user: '12036328109133093',
-          _serialized: '12036328101330930@g.us'
+          user: '120363263171731698',
+          _serialized: '120363263171731698@g.us'
         },
       }
   ]
