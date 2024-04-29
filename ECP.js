@@ -328,5 +328,15 @@ exports.ECP = [
           user: '120363263171731698',
           _serialized: '120363263171731698@g.us'
         },
+      },
+      {
+        _id: "66277586517bd26d422e0c02", 
+        name:"Visibilia Group s.r.l",
+        groupName: "LeadSystem - Visibilia Group s.r.l.",
+        waId: {
+          server: 'g.us',
+          user: '120363275262572818',
+          _serialized: '120363275262572818@g.us'
+        },
       }
   ]
