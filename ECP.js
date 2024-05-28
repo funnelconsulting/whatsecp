@@ -338,5 +338,25 @@ exports.ECP = [
           user: '120363275262572818',
           _serialized: '120363275262572818@g.us'
         },
+      },
+      {
+        _id: "663e03877f511f49f6cf0df8", 
+        name:"Click Academy Srl",
+        groupName: "LeadSystem - Click Academy",
+        waId: {
+          server: 'g.us',
+          user: '120363301899039255',
+          _serialized: '120363301899039255@g.us'
+        },
+      },
+      {
+        _id: "665488240613b6d58ab8abcb", 
+        name:"Target Services Solutions srl",
+        groupName: "LeadSystem - Target Services Solution Srl ",
+        waId: {
+          server: 'g.us',
+          user: '120363302167552583',
+          _serialized: '120363302167552583@g.us'
+        },
       }
   ]
