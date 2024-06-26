@@ -358,5 +358,35 @@ exports.ECP = [
           user: '120363302167552583',
           _serialized: '120363302167552583@g.us'
         },
+      },
+      {
+        _id: "6668a3ef295d37412738af83", 
+        name:"Il Nazareno srl",
+        groupName: "LeadSystem - Il Nazareno",
+        waId: {
+          server: 'g.us',
+          user: '120363309017916975',
+          _serialized: '120363309017916975@g.us'
+        },
+      },
+      {
+        _id: "667454696f41e6b657608fe5", 
+        name:"CENTRO STUDI MODUS LECCO srl",
+        groupName: "LeadSystem - Modus ",
+        waId: {
+          server: 'g.us',
+          user: '120363310900863060',
+          _serialized: '120363310900863060@g.us'
+        },
+      },
+      {
+        _id: "64ef0634478c8705077839ce", 
+        name:"Atena srls",
+        groupName: "LeadSystem - Atenax",
+        waId: {
+          server: 'g.us',
+          user: '120363295413754738',
+          _serialized: '120363295413754738@g.us'
+        },
       }
   ]
