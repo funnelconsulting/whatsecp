@@ -395,8 +395,8 @@ exports.ECP = [
         groupName: "LeadSystem - DC FORM LAB",
         waId: {
           server: 'g.us',
-          user: '120363295413754738',
-          _serialized: '120363295413754738@g.us'
+          user: '120363312646323456',
+          _serialized: '120363312646323456@g.us'
         },
       }
   ]
