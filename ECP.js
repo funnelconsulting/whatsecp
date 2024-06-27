@@ -380,9 +380,19 @@ exports.ECP = [
         },
       },
       {
-        _id: "64ef0634478c8705077839ce", 
-        name:"Atena srls",
+        _id: "651acec67ccf14d8d809ea72", 
+        name:"Pronto Scuola Srl",
         groupName: "LeadSystem - Atenax",
+        waId: {
+          server: 'g.us',
+          user: '120363295413754738',
+          _serialized: '120363295413754738@g.us'
+        },
+      },
+      {
+        _id: "667d157ab2c18f1c2f984886", 
+        name:"DC FORM-LAB SRLS",
+        groupName: "LeadSystem - DC FORM LAB",
         waId: {
           server: 'g.us',
           user: '120363295413754738',
