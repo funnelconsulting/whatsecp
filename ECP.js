@@ -398,5 +398,35 @@ exports.ECP = [
           user: '120363312646323456',
           _serialized: '120363312646323456@g.us'
         },
+      },
+      {
+        _id: "668512a3e704f9d7c83d5c59", 
+        name:"Faad Group s.r.l.",
+        groupName: "LeadSystem - Faad Group",
+        waId: {
+          server: 'g.us',
+          user: '120363314495630392',
+          _serialized: '120363314495630392@g.us'
+        },
+      },
+      {
+        _id: "6682cb75b2c18f1c2f98ef7d", 
+        name:"la dotta srls",
+        groupName: "LeadSystem - La Dotta",
+        waId: {
+          server: 'g.us',
+          user: '120363298557841257',
+          _serialized: '120363298557841257@g.us'
+        },
+      },
+      {
+        _id: "6687a9c9ca0749031ce15842", 
+        name:"Centro scolastico Giacomo Leopardi srl",
+        groupName: "LeadSystem - ECP Leopardi",
+        waId: {
+          server: 'g.us',
+          user: '120363315483967610',
+          _serialized: '120363315483967610@g.us'
+        },
       }
   ]
