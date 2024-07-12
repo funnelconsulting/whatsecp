@@ -107,7 +107,7 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
         const { waId } = luissGroup;
 
         await client.sendMessage(waId._serialized, leadMessage)
-            .then(() => console.log("Messaggio inviato a", knownEcp.name, "per la lead:", leads.nome, leads.cognome))
+            .then(() => console.log("Messaggio inviato a", luissGroup.name, "per la lead:", leads.nome, leads.cognome))
             .catch(error => console.error("Errore nell'invio del messaggio:", error));
         console.log(`Messaggio inviato a ${luissGroup.name}`);
         res.status(200).send('Messaggi inviati con successo agli ECP.');
