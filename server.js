@@ -88,54 +88,34 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
     }
   });
 
-  /*app.post('/webhook-leadchatbot-ecp-notification', async (req, res) => {
+  app.post('/webhook-lead-luiss', async (req, res) => {
     console.log(req.body)
+    const luissGroup = {
+      name: "Luiss",
+      _id: "6674220bc423baeeaa460161", 
+      groupName: "ComparaCorsi - Luiss Business School",
+      waId: {
+        server: 'g.us',
+        user: '120363298744307174',
+        _serialized: '120363298744307174@g.us'
+      },
+    }
     try {
-        const ecpId = req.body.ecpId;
+        const ecpId = req.body.ecpId; 
         const leads = req.body.leads;
-          const knownEcp = ECP.find(item => item._id === ecpId);
-            if (knownEcp) {
-                const leadMessage = `È entrata una nuova lead con appuntamento!\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}\n• Appuntamento: ${leads.appDate}`;
-                const { waId } = knownEcp;
+        const leadMessage = `È entrata una nuova lead! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
+        const { waId } = luissGroup;
 
-                await client.sendMessage(waId._serialized, leadMessage)
-                    .then(() => console.log("Messaggio inviato a", knownEcp.name, "per la lead:", leads.nome, leads.cognome))
-                    .catch(error => console.error("Errore nell'invio del messaggio:", error));
-                console.log(`Messaggio inviato a ${knownEcp.name}`);
-            } else {
-                console.log(`ECP non trovato con id: ${ecpId}`);
-            }
+        await client.sendMessage(waId._serialized, leadMessage)
+            .then(() => console.log("Messaggio inviato a", knownEcp.name, "per la lead:", leads.nome, leads.cognome))
+            .catch(error => console.error("Errore nell'invio del messaggio:", error));
+        console.log(`Messaggio inviato a ${luissGroup.name}`);
         res.status(200).send('Messaggi inviati con successo agli ECP.');
     } catch (error) {
         console.error('Errore durante l\'invio dei messaggi:', error);
         res.status(500).send('Errore durante l\'invio dei messaggi.');
     }
-  });*/
-
-  /*app.post('/webhook-leadchatbot-ecp-change-app', async (req, res) => {
-    console.log(req.body)
-    try {
-        const ecpId = req.body.ecpId;
-        const leads = req.body.leads;
-        const appDate = req.body.appDate;
-          const knownEcp = ECP.find(item => item._id === ecpId);
-            if (knownEcp) {
-                const leadMessage = `• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono} ha cambiato appuntamento al giorno: ${appDate}`;
-                const { waId } = knownEcp;
-
-                await client.sendMessage(waId._serialized, leadMessage)
-                    .then(() => console.log("Messaggio inviato a", knownEcp.name, "per la lead:", leads.nome, leads.cognome))
-                    .catch(error => console.error("Errore nell'invio del messaggio:", error));
-                console.log(`Messaggio inviato a ${knownEcp.name}`);
-            } else {
-                console.log(`ECP non trovato con id: ${ecpId}`);
-            }
-        res.status(200).send('Messaggi inviati con successo agli ECP.');
-    } catch (error) {
-        console.error('Errore durante l\'invio dei messaggi:', error);
-        res.status(500).send('Errore durante l\'invio dei messaggi.');
-    }
-  });*/
+  });
 
   client.initialize();
 
