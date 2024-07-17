@@ -428,5 +428,15 @@ exports.ECP = [
           user: '120363315483967610',
           _serialized: '120363315483967610@g.us'
         },
+      },
+      {
+        _id: "668cfe83e68c83f7aa73ae85", 
+        name:"TOTALSTUDI S.R.L.S.",
+        groupName: "LeadSystem - TotalStudi",
+        waId: {
+          server: 'g.us',
+          user: '120363316425120695',
+          _serialized: '120363316425120695@g.us'
+        },
       }
   ]
