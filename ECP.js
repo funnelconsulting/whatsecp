@@ -438,5 +438,45 @@ exports.ECP = [
           user: '120363316425120695',
           _serialized: '120363316425120695@g.us'
         },
+      },
+      {
+        _id: "66979ba8fe16b916917ad03b", 
+        name:"Focus Srls",
+        groupName: "LeadSystem - Focus Srls",
+        waId: {
+          server: 'g.us',
+          user: '120363317881379127',
+          _serialized: '120363317881379127@g.us'
+        },
+      },
+      {
+        _id: "669639eb12e43633d43d3eec", 
+        name:"EPC DALM",
+        groupName: "LeadSystem - ECP Dalm 1",
+        waId: {
+          server: 'g.us',
+          user: '120363297949864461',
+          _serialized: '120363297949864461@g.us'
+        },
+      },
+      {
+        _id: "6697d29ffe16b916917add29", 
+        name:"ECP DALM 2",
+        groupName: "LeadSystem - ECP Dalm 2",
+        waId: {
+          server: 'g.us',
+          user: '120363315642651452',
+          _serialized: '120363315642651452@g.us'
+        },
+      },
+      {
+        _id: "6697d727fe16b916917ade7d", 
+        name:"ECP DALM 3",
+        groupName: "LeadSystem - ECP Dalm 3",
+        waId: {
+          server: 'g.us',
+          user: '120363317977561354',
+          _serialized: '120363317977561354@g.us'
+        },
       }
   ]
