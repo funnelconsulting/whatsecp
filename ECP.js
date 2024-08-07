@@ -478,5 +478,15 @@ exports.ECP = [
           user: '120363317977561354',
           _serialized: '120363317977561354@g.us'
         },
+      },
+      {
+        _id: "66b0fe84e4c38b314db0a923", 
+        name:"FAMA SRLS",
+        groupName: "LeadSystem - Fama srls",
+        waId: {
+          server: 'g.us',
+          user: '120363305247681338',
+          _serialized: '120363305247681338@g.us'
+        },
       }
   ]

@@ -43,7 +43,7 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
   client.on('ready', () => {
     console.log('Client is ready!');
     client.getChats().then(async(chats) => {
-      const group4 = chats.filter(c => c.name.trim() === "LeadSystem- ECP Dalm 3");
+      const group4 = chats.filter(c => c.name.trim() === "LeadSystem - Fama srls");
       console.log(group4)
     }).catch((err) => {
         console.error('Si è verificato un errore durante la ricerca della chat:', err);
