@@ -69,9 +69,10 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
     try {
         const ecpId = req.body.ecpId; 
         const leads = req.body.leads;
+        const orientatore = req.body.orientatore ? req.body.orientatore : null;
           const knownEcp = ECP.find(item => item._id === ecpId);
             if (knownEcp) {
-                const leadMessage = `È entrata una nuova lead! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
+                const leadMessage = `È entrata una nuova lead${orientatore && orientatore !== null && ' assegnata a ' + orientatore.nome+ ' ' + orientatore.cognome}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
                 const { waId } = knownEcp;
 
                 await client.sendMessage(waId._serialized, leadMessage)
