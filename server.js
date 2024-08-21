@@ -43,8 +43,10 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
   client.on('ready', () => {
     console.log('Client is ready!');
     client.getChats().then(async(chats) => {
-      const group4 = chats.filter(c => c.name.trim() === "LeadSystem - Fama srls");
-      console.log(group4)
+      const group4 = chats.filter(c => c.name.trim() === "LeadSystem - Nextgen");
+      const group = chats.filter(c => c.name.trim() === "LeadSystem - DPL Accademy");
+      //console.log(group4)
+      console.log(group)
     }).catch((err) => {
         console.error('Si è verificato un errore durante la ricerca della chat:', err);
     });
@@ -72,7 +74,8 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
         const orientatore = req.body.orientatore ? req.body.orientatore : null;
           const knownEcp = ECP.find(item => item._id === ecpId);
             if (knownEcp) {
-                const leadMessage = `È entrata una nuova lead${(orientatore && orientatore !== null) && (' assegnata a ' + orientatore.nome+ ' ' + orientatore.cognome)}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
+                //const leadMessage = `È entrata una nuova lead${(orientatore && orientatore !== null) && (' assegnata a ' + orientatore.nome+ ' ' + orientatore.cognome)}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
+                const leadMessage = `È entrata una nuova lead! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
                 const { waId } = knownEcp;
 
                 await client.sendMessage(waId._serialized, leadMessage)

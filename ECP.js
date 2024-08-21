@@ -488,5 +488,25 @@ exports.ECP = [
           user: '120363305247681338',
           _serialized: '120363305247681338@g.us'
         },
+      },
+      {
+        _id: "668eba0c87b41cb081302741", 
+        name:"Nextgen Academy SRLS",
+        groupName: "LeadSystem - Nextgen",
+        waId: {
+          server: 'g.us',
+          user: '120363306672426958',
+          _serialized: '120363306672426958@g.us'
+        },
+      },
+      {
+        _id: "66b381f1d260295c5e521df1", 
+        name:"dpl Accademy",
+        groupName: "LeadSystem - DPL Accademy",
+        waId: {
+          server: 'g.us',
+          user: '120363305732230573',
+          _serialized: '120363305732230573@g.us'
+        },
       }
   ]
