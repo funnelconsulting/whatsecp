@@ -43,8 +43,7 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
   client.on('ready', () => {
     console.log('Client is ready!');
     client.getChats().then(async(chats) => {
-      const group4 = chats.filter(c => c.name.trim() === "LeadSystem - Nextgen");
-      const group = chats.filter(c => c.name.trim() === "LeadSystem - DPL Accademy");
+      const group = chats.filter(c => c.name.trim() === "LeadSystem - inkoffis srls");
       //console.log(group4)
       console.log(group)
     }).catch((err) => {

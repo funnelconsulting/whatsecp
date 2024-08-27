@@ -508,5 +508,15 @@ exports.ECP = [
           user: '120363305732230573',
           _serialized: '120363305732230573@g.us'
         },
+      },
+      {
+        _id: "66c89adc2709c401c0044ff1", 
+        name:"inkoffis srls",
+        groupName: "LeadSystem - inkoffis srls",
+        waId: {
+          server: 'g.us',
+          user: '120363327151650811',
+          _serialized: '120363327151650811@g.us'
+        },
       }
   ]
