@@ -518,5 +518,35 @@ exports.ECP = [
           user: '120363327151650811',
           _serialized: '120363327151650811@g.us'
         },
+      },
+      {
+        _id: "66ced8fdd2fe081138a688b2", 
+        name:"CENTRO SERVIZI UNIVERSITARI PER L'EDUCAZIONE SOCIALE E PROFESSIONALE TRE PUNTO ZERO S.R.L",
+        groupName: "LeadSystem - Centro Studi Toniolo",
+        waId: {
+          server: 'g.us',
+          user: '120363314361584815',
+          _serialized: '120363314361584815@g.us'
+        },
+      },
+      {
+        _id: "66d19270ae0f5ed5c258119a", 
+        name:"uni.form.net srls",
+        groupName: "LeadSystem - uni.form.net",
+        waId: {
+          server: 'g.us',
+          user: '120363331503879564',
+          _serialized: '120363331503879564@g.us'
+        },
+      },
+      {
+        _id: "66d1a2ddae0f5ed5c25824b4", 
+        name:"UniforYou",
+        groupName: "LeadSystem - Uniforyou",
+        waId: {
+          server: 'g.us',
+          user: '120363314366985276',
+          _serialized: '120363314366985276@g.us'
+        },
       }
   ]
