@@ -548,5 +548,15 @@ exports.ECP = [
           user: '120363314366985276',
           _serialized: '120363314366985276@g.us'
         },
+      },
+      {
+        _id: "66d70576462e1198c64d5b01", 
+        name:"Consorzio PMI Alto Sangro",
+        groupName: "LeadSystem - Polo Alto Sangro",
+        waId: {
+          server: 'g.us',
+          user: '120363331418503627',
+          _serialized: '120363331418503627@g.us'
+        },
       }
   ]

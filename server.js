@@ -46,8 +46,9 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
       const group = chats.filter(c => c.name.trim() === "LeadSystem - Uniforyou");
       const group2 = chats.filter(c => c.name.trim() === "LeadSystem - uni.form.net");
       const group3 = chats.filter(c => c.name.trim() === "LeadSystem - Centro Studi Toniolo");
+      const group4 = chats.filter(c => c.name.trim() === "LeadSystem - Polo Alto Sangro");
       //console.log(group4)
-      console.log(group)
+      console.log(group4)
       //console.log(group2)
       //console.log(group3)
     }).catch((err) => {
