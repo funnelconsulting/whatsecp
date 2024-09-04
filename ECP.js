@@ -558,5 +558,15 @@ exports.ECP = [
           user: '120363331418503627',
           _serialized: '120363331418503627@g.us'
         },
+      },
+      {
+        _id: "66d8648c231410bea3bef8af", 
+        name:"Gea servizi srl",
+        groupName: "LeadSystem - Gea servizi",
+        waId: {
+          server: 'g.us',
+          user: '120363316128801237',
+          _serialized: '120363316128801237@g.us'
+        },
       }
   ]
