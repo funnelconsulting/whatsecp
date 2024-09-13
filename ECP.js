@@ -568,5 +568,45 @@ exports.ECP = [
           user: '120363316128801237',
           _serialized: '120363316128801237@g.us'
         },
-      }
+      },
+      {
+        _id: "66d9768b9ceef68f7f40d7a2", 
+        name:"2D Formazione Cooperativa Impresa Sociale",
+        groupName: "LeadSystem - 2D Formazione",
+        waId: {
+          server: 'g.us',
+          user: '120363334793303344',
+          _serialized: '120363334793303344@g.us'
+        },
+      },
+      {
+        _id: "66cd97ced2fe081138a5c1df", 
+        name:"Formazione universitaria digitale",
+        groupName: "LeadSystem - Formazione universitaria digitale",
+        waId: {
+          server: 'g.us',
+          user: '120363319489782100',
+          _serialized: '120363319489782100@g.us'
+        },
+      },
+      {
+        _id: "66cf5505d2fe081138a70f9a", 
+        name:"Job4U Srl",
+        groupName: "LeadSystem - Job4U Srl",
+        waId: {
+          server: 'g.us',
+          user: '120363316871354098',
+          _serialized: '120363316871354098@g.us'
+        },
+      },
+      {
+        _id: "66e0663d9ceef68f7f454cba", 
+        name:"Associazione C.S.R. Centro Studi Ragusa",
+        groupName: "LeadSystem - Centro Studi Ragusa",
+        waId: {
+          server: 'g.us',
+          user: '120363316013449444',
+          _serialized: '120363316013449444@g.us'
+        },
+      },
   ]
