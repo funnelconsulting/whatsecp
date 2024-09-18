@@ -43,14 +43,12 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
   client.on('ready', () => {
     console.log('Client is ready!');
     client.getChats().then(async(chats) => {
-      const group1 = chats.filter(c => c.name.trim() === "LeadSystem - Job4U Srl");
-      const group2 = chats.filter(c => c.name.trim() === "LeadSystem - Formazione universitaria digitale");
-      const group3 = chats.filter(c => c.name.trim() === "LeadSystem - Centro Studi Ragusa");
-      const group4 = chats.filter(c => c.name.trim() === "LeadSystem - 2D Formazione");
-      //console.log(group1)
-      //console.log(group2)
-      //console.log(group3)
-      console.log(group4)
+      const group1 = chats.filter(c => c.name.trim() === "LeadSystem - ECP Pegaso Lesina");
+      const group2 = chats.filter(c => c.name.trim() === "LeadSystem - ECP Mecenate");
+      const group3 = chats.filter(c => c.name.trim() === "LeadSystem - Ateneo Digitale");
+      console.log(group1)
+      console.log(group2)
+      console.log(group3)
     }).catch((err) => {
         console.error('Si è verificato un errore durante la ricerca della chat:', err);
     });

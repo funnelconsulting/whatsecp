@@ -609,4 +609,34 @@ exports.ECP = [
           _serialized: '120363316013449444@g.us'
         },
       },
+      {
+        _id: "66e9959983bb69471261f52b", 
+        name:"ATENEO DIGITALE S.R.L.",
+        groupName: "LeadSystem - Ateneo Digitale",
+        waId: {
+          server: 'g.us',
+          user: '120363318416949197',
+          _serialized: '120363318416949197@g.us'
+        },
+      },
+      {
+        _id: "66e883fa83bb694712614d8c", 
+        name:"Centro Studi Mecenate Srl",
+        groupName: "LeadSystem - ECP Mecenate",
+        waId: {
+          server: 'g.us',
+          user: '120363316373776133',
+          _serialized: '120363316373776133@g.us'
+        },
+      },
+      {
+        _id: "66e2ce2a9ceef68f7f46d1be", 
+        name:"Associazione culturale di formazione e orientamento universitario Pegaso Lesina",
+        groupName: "LeadSystem - ECP Pegaso Lesina",
+        waId: {
+          server: 'g.us',
+          user: '120363315743604953',
+          _serialized: '120363315743604953@g.us'
+        },
+      },
   ]
