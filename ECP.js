@@ -639,4 +639,34 @@ exports.ECP = [
           _serialized: '120363315743604953@g.us'
         },
       },
+      {
+        _id: "66a0e014f9a7e0213e384bdf", 
+        name:"Trapani",
+        groupName: "LeadSystem - Trapani",
+        waId: {
+          server: 'g.us',
+          user: '120363325777939110',
+          _serialized: '120363325777939110@g.us'
+        },
+      },
+      {
+        _id: "66fbe240bee521ac54adb5b1", 
+        name:"BOSTON GROUP SRL",
+        groupName: "LeadSystem - Boston Group SRL",
+        waId: {
+          server: 'g.us',
+          user: '120363342492879667',
+          _serialized: '120363342492879667@g.us'
+        },
+      },
+      {
+        _id: "66e9800783bb69471261dddd", 
+        name:"asociazione magister formazione",
+        groupName: "LeadSystem - Associazione Magister formazione",
+        waId: {
+          server: 'g.us',
+          user: '120363339094369287',
+          _serialized: '120363339094369287@g.us'
+        },
+      },
   ]

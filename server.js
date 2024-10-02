@@ -43,9 +43,9 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
   client.on('ready', () => {
     console.log('Client is ready!');
     client.getChats().then(async(chats) => {
-      const group1 = chats.filter(c => c.name.trim() === "LeadSystem - ECP Pegaso Lesina");
-      const group2 = chats.filter(c => c.name.trim() === "LeadSystem - ECP Mecenate");
-      const group3 = chats.filter(c => c.name.trim() === "LeadSystem - Ateneo Digitale");
+      const group1 = chats.filter(c => c.name.trim() === "LeadSystem - Associazione Magister formazione");
+      const group2 = chats.filter(c => c.name.trim() === "LeadSystem - Boston Group SRL");
+      const group3 = chats.filter(c => c.name.trim() === "LeadSystem - Trapani");
       console.log(group1)
       console.log(group2)
       console.log(group3)
