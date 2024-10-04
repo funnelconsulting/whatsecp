@@ -669,4 +669,14 @@ exports.ECP = [
           _serialized: '120363339094369287@g.us'
         },
       },
+      {
+        _id: "66fbb217183c4ef79f698e0d", 
+        name:"Bestudent s.r.l.",
+        groupName: "LeadSystem - Bestudent s.r.l.",
+        waId: {
+          server: 'g.us',
+          user: '120363339094369287',
+          _serialized: '120363339094369287@g.us'
+        },
+      },
   ]
