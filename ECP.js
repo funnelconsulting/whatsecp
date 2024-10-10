@@ -679,4 +679,24 @@ exports.ECP = [
           _serialized: '120363345694315918@g.us'
         },
       },
+      {
+        _id: "660f9e0ea43d39c62fdb1597", 
+        name:"Digital Knowledge",
+        groupName: "LeadSytem - Digital Knowledge",
+        waId: {
+          server: 'g.us',
+          user: '120363329877391296',
+          _serialized: '120363329877391296@g.us'
+        },
+      },
+      {
+        _id: "6704fad6948ca43be4e88518", 
+        name:"CENTRO STUDI MARTE SAS DI VETRO SIMONA",
+        groupName: "LeadSystem - Centro Studi Marte",
+        waId: {
+          server: 'g.us',
+          user: '120363326013899452',
+          _serialized: '120363326013899452@g.us'
+        },
+      },
   ]

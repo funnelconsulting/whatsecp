@@ -23,8 +23,8 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
         backupSyncIntervalMs: 300000,
       }),
       webVersionCache: {
-        type: 'remote',
-        remotePath: "https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html"
+        type: 'none',
+        //remotePath: "https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html"
         //remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.3000.1014640118-alpha.html',
       },
       puppeteer: {
@@ -50,10 +50,22 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
   client.on('ready', () => {
     console.log('Client is ready!');
     client.getChats().then(async(chats) => {
-      const group1 = chats.filter(c => c.name.trim() === "LeadSystem - Bestudent s.r.l.");
-      const group2 = chats.filter(c => c.name.trim() === "LeadSystem - Boston Group SRL");
+      const group1 = chats.filter(c => c.name.trim() === "LeadSystem - Digital Knowledge");
+      const group2 = chats.filter(c => c.name.trim() === "LeadSystem - Centro Studi Marte");
       const group3 = chats.filter(c => c.name.trim() === "LeadSystem - Trapani");
       console.log(group1)
+      console.log(group2)
+
+      /*if (group1) {
+        try {
+          await client.sendMessage(group1[0].id._serialized, "Ciao a tutti! Questo è un messaggio di prova.");
+          console.log('Messaggio inviato con successo al gruppo 1');
+        } catch (error) {
+          console.error('Errore nell\'invio del messaggio al gruppo 1:', error);
+        }
+      } else {
+        console.log('Gruppo 1 non trovato');
+      }*/
       //console.log(group2)
       //console.log(group3)
     }).catch((err) => {
