@@ -699,4 +699,24 @@ exports.ECP = [
           _serialized: '120363326013899452@g.us'
         },
       },
+      {
+        _id: "670cdbcc1e8436fff1f84dd9", 
+        name:"Obiettivo Business srl",
+        groupName: "LeadSystem - Obiettivo Business srl",
+        waId: {
+          server: 'g.us',
+          user: '120363344384127322',
+          _serialized: '120363344384127322@g.us'
+        },
+      },
+      {
+        _id: "66c5e6b036043ff1552575b8", 
+        name:"Unilaurus a.p.s.",
+        groupName: "LeadSystem - Unilaurus",
+        waId: {
+          server: 'g.us',
+          user: '120363345293653028',
+          _serialized: '120363345293653028@g.us'
+        },
+      },
   ]
