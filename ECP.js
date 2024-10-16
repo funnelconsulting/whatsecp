@@ -725,8 +725,8 @@ exports.ECP = [
         groupName: "LeadSystem - Centro studi Socrate",
         waId: {
           server: 'g.us',
-          user: '120363344384127322',
-          _serialized: '120363344384127322@g.us'
+          user: '120363348562232602',
+          _serialized: '120363348562232602@g.us'
         },
       },
       {
@@ -735,8 +735,8 @@ exports.ECP = [
         groupName: "LeadSystem - Paideia Srl",
         waId: {
           server: 'g.us',
-          user: '120363345293653028',
-          _serialized: '120363345293653028@g.us'
+          user: '120363347441102519',
+          _serialized: '120363347441102519@g.us'
         },
       },
   ]
