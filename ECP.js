@@ -745,8 +745,8 @@ exports.ECP = [
         groupName: "LeadSystem - P&B (La Spezia)",
         waId: {
           server: 'g.us',
-          user: '120363347441102519',
-          _serialized: '120363347441102519@g.us'
+          user: '120363336961900474',
+          _serialized: '120363336961900474@g.us'
         },
       },
       {
@@ -755,8 +755,8 @@ exports.ECP = [
         groupName: "LeadSystem - Gaudium (Sciacca)",
         waId: {
           server: 'g.us',
-          user: '120363347441102519',
-          _serialized: '120363347441102519@g.us'
+          user: '120363338572089988',
+          _serialized: '120363338572089988@g.us'
         },
       },
   ]
