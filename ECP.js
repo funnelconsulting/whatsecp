@@ -739,4 +739,24 @@ exports.ECP = [
           _serialized: '120363347441102519@g.us'
         },
       },
+      {
+        _id: "67190c5852359fd6ee76c175", 
+        name:"P&B consulting srls",
+        groupName: "LeadSystem - P&B (La Spezia)",
+        waId: {
+          server: 'g.us',
+          user: '120363347441102519',
+          _serialized: '120363347441102519@g.us'
+        },
+      },
+      {
+        _id: "670d4c1d1e8436fff1f8ead8", 
+        name:"Gaudium Servizi srls",
+        groupName: "LeadSystem - Gaudium (Sciacca)",
+        waId: {
+          server: 'g.us',
+          user: '120363347441102519',
+          _serialized: '120363347441102519@g.us'
+        },
+      },
   ]
