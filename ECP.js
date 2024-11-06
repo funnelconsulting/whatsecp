@@ -759,4 +759,24 @@ exports.ECP = [
           _serialized: '120363338572089988@g.us'
         },
       },
+      /*{
+        _id: "6723a7bfdc66fddeab843448", 
+        name:"Digital Gea srl",
+        groupName: "LeadSystem - Digital Gea",
+        waId: {
+          server: 'g.us',
+          user: '120363336961900474',
+          _serialized: '120363336961900474@g.us'
+        },
+      },
+      {
+        _id: "67224910dc66fddeab8364a7", 
+        name:"Emera SRL",
+        groupName: "LeadSystem - Emera (Siref)",
+        waId: {
+          server: 'g.us',
+          user: '120363338572089988',
+          _serialized: '120363338572089988@g.us'
+        },
+      },*/
   ]
