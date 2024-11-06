@@ -759,14 +759,14 @@ exports.ECP = [
           _serialized: '120363338572089988@g.us'
         },
       },
-      /*{
+      {
         _id: "6723a7bfdc66fddeab843448", 
         name:"Digital Gea srl",
         groupName: "LeadSystem - Digital Gea",
         waId: {
           server: 'g.us',
-          user: '120363336961900474',
-          _serialized: '120363336961900474@g.us'
+          user: '120363343225162501',
+          _serialized: '120363343225162501@g.us'
         },
       },
       {
@@ -775,8 +775,8 @@ exports.ECP = [
         groupName: "LeadSystem - Emera (Siref)",
         waId: {
           server: 'g.us',
-          user: '120363338572089988',
-          _serialized: '120363338572089988@g.us'
+          user: '120363338098591664',
+          _serialized: '120363338098591664@g.us'
         },
-      },*/
+      },
   ]
