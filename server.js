@@ -23,9 +23,8 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
         backupSyncIntervalMs: 300000,
       }),
       webVersionCache: {
-        type: 'none',
-        //remotePath: "https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html"
-        //remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.3000.1014640118-alpha.html',
+        type: 'remote',
+        remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2410.1.html',
       },
       puppeteer: {
         headless: true,
@@ -72,7 +71,7 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q
         console.error('Si è verificato un errore durante la ricerca della chat:', err);
     });
   });
-
+  //"whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#v1.26.0",
   client.on("remote_session_saved", () => {
     console.log("Sessione salvata!")
   })
