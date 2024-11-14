@@ -779,4 +779,14 @@ exports.ECP = [
           _serialized: '120363338098591664@g.us'
         },
       },
+      {
+        _id: "6734675f29c4a156e125d18b", 
+        name:"Accademia lanzillotta",
+        groupName: "LeadSystem - Lanzillotta",
+        waId: {
+          server: 'g.us',
+          user: '120363338098591664',
+          _serialized: '120363338098591664@g.us'
+        },
+      },
   ]
