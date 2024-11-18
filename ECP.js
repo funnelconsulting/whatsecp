@@ -789,14 +789,14 @@ exports.ECP = [
           _serialized: '120363346153332266@g.us'
         },
       },
-      /*{
+      {
         _id: "6733953829c4a156e125934b", 
         name:"Flyip Srl",
         groupName: "LeadSystem - Flyip (Kaizen)",
         waId: {
           server: 'g.us',
-          user: '120363346153332266',
-          _serialized: '120363346153332266@g.us'
+          user: '120363362885677846',
+          _serialized: '120363362885677846@g.us'
         },
-      },*/
+      },
   ]
