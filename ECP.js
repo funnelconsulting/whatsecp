@@ -799,4 +799,14 @@ exports.ECP = [
           _serialized: '120363362885677846@g.us'
         },
       },
+      /*{
+        _id: "6748acecf8e20099ce0c1d3d", 
+        name:"centrostudi g.deledda",
+        groupName: "LeadSystem - Deledda",
+        waId: {
+          server: 'g.us',
+          user: '120363362885677846',
+          _serialized: '120363362885677846@g.us'
+        },
+      },*/
   ]
