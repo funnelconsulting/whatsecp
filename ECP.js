@@ -809,15 +809,14 @@ exports.ECP = [
           _serialized: '120363372523164858@g.us'
         },
       },
-      /*
       {
         _id: "6756c84867cde2db0983b64f", 
         name:"KONTACI SRLS",
         groupName: "Leadsystem - Kontaci",
         waId: {
           server: 'g.us',
-          user: '120363372523164858',
-          _serialized: '120363372523164858@g.us'
+          user: '120363352301697870',
+          _serialized: '120363352301697870@g.us'
         },
-      },*/
+      },
   ]
