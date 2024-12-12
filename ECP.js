@@ -819,4 +819,15 @@ exports.ECP = [
           _serialized: '120363352301697870@g.us'
         },
       },
+      /*
+      {
+        _id: "675862a467cde2db0984331e", 
+        name:"Uniformacademy SRL",
+        groupName: "LeadSystem - Conversano",
+        waId: {
+          server: 'g.us',
+          user: '120363352301697870',
+          _serialized: '120363352301697870@g.us'
+        },
+      },*/
   ]
