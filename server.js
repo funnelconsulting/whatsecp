@@ -10,7 +10,7 @@ const { ECP } = require('./ECP');
 
 let sessionObj = {};
 
-mongoose.connect('mongodb+srv://mattianorisbusiness:MAD7389gva@whatsappstore.x0q7aga.mongodb.net/?retryWrites=true&w=majority&appName=WhatsappStore').then(() => {
+mongoose.connect('mongodb+srv://mattianorisbusiness:rTn5AIQzwPXqitLJ@db0.8jby7.mongodb.net/?retryWrites=true&w=majority&appName=DB0').then(() => {
   const store = new MongoStore({ mongoose: mongoose });
   console.log('MongoDB Connesso!!!')
   let client;
