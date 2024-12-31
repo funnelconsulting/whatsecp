@@ -835,8 +835,8 @@ exports.ECP = [
         groupName: "LeadSystem - Savigliano",
         waId: {
           server: 'g.us',
-          user: '120363379935550001',
-          _serialized: '120363379935550001@g.us'
+          user: '120363383946087082',
+          _serialized: '120363383946087082@g.us'
         },
       },
   ]
