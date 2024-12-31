@@ -829,4 +829,14 @@ exports.ECP = [
           _serialized: '120363379935550001@g.us'
         },
       },
+      {
+        _id: "6762042b32a33981f7fbd370", 
+        name:"Centro Studio Savigliano Srls",
+        groupName: "LeadSystem - Savigliano",
+        waId: {
+          server: 'g.us',
+          user: '120363379935550001',
+          _serialized: '120363379935550001@g.us'
+        },
+      },
   ]
