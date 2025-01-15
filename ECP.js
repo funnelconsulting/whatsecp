@@ -839,14 +839,14 @@ exports.ECP = [
           _serialized: '120363383946087082@g.us'
         },
       },
-      /*{
+      {
         _id: "67802c90f46b663c5c6b9afd", 
         name:"ASSOCIAZIONE GALILEO FORMAZIONE",
         groupName: "LeadSystem - ASSOCIAZIONE GALILEO FORMAZIONE",
         waId: {
           server: 'g.us',
-          user: '120363383946087082',
-          _serialized: '120363383946087082@g.us'
+          user: '120363386987202053',
+          _serialized: '120363386987202053@g.us'
         },
-      },*/
+      },
   ]
