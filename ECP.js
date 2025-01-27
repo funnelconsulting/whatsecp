@@ -869,24 +869,24 @@ exports.ECP = [
           _serialized: '120363389463673174@g.us'
         },
       },
-      /*{
+      {
         _id: "678f89da98becb24b578c3a5", 
         name:"Istituto Volta srl",
         groupName: "LeadSystem - Istituto Volta",
         waId: {
           server: 'g.us',
-          user: '120363386987202053',
-          _serialized: '120363386987202053@g.us'
+          user: '120363392817074070',
+          _serialized: '120363392817074070@g.us'
         },
-      },*/
-      /*{
+      },
+      {
         _id: "677d18ea9b5a0d7f5818f0aa", 
         name:"ComparaCorsi - Pre qualifica",
         groupName: "LeadSystem - Pre-qualifica ComparaCorsi",
         waId: {
           server: 'g.us',
-          user: '120363386987202053',
-          _serialized: '120363386987202053@g.us'
+          user: '120363373393305815',
+          _serialized: '120363373393305815@g.us'
         },
-      },*/
+      },
   ]
