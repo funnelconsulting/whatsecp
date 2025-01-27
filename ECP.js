@@ -849,26 +849,26 @@ exports.ECP = [
           _serialized: '120363386987202053@g.us'
         },
       },
-      /*{
+      {
         _id: "678a7f61c97c3cc204e0aa72", 
         name:"AUGUSTEA FORMAT SRLS",
         groupName: "LeadSystem - AUGUSTEA",
         waId: {
           server: 'g.us',
-          user: '120363386987202053',
-          _serialized: '120363386987202053@g.us'
+          user: '120363372811609946',
+          _serialized: '120363372811609946@g.us'
         },
-      },*/
-      /*{
+      },
+      {
         _id: "6787e25c31b6a464c3c530e3", 
         name:"Ateneo San Michele",
         groupName: "LeadSystem - Ateneo San Michele",
         waId: {
           server: 'g.us',
-          user: '120363386987202053',
-          _serialized: '120363386987202053@g.us'
+          user: '120363389463673174',
+          _serialized: '120363389463673174@g.us'
         },
-      },*/
+      },
       /*{
         _id: "678f89da98becb24b578c3a5", 
         name:"Istituto Volta srl",
