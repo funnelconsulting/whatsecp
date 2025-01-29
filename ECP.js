@@ -240,8 +240,8 @@ exports.ECP = [
         },
       },
       {
-        _id: "64f87300db7efcc74361fe25", 
-        name:"Nova Forma Mentis Srl", 
+        _id: "6798d2a21bda1eab3b97ef6e", 
+        name:"Nova Forma Mentis SRL", 
         groupName: "LeadSystem - Nova Forma Mentis", 
         waId: {
           server: 'g.us',
