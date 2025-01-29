@@ -99,10 +99,15 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:rTn5AIQzwPXqitLJ@db0.8jby7.m
           const knownEcp = ECP.find(item => item._id === ecpId);
             if (knownEcp) {
               const leadMessage = `È entrata una nuova lead${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
+              const leadMessagePrequalificaVolta = `È entrata una nuova lead Qualificata! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}\n• ${leads.corsoInteressato || ""}\n• ${leads.provincia || ""}`;
+              const leadMessagePrequalificaComparacorsi = `È entrata una nuova lead Qualificata${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
                 //const leadMessage = `È entrata una nuova lead! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
                 const { waId } = knownEcp;
 
-                await client.sendMessage(waId._serialized, leadMessage)
+                await client.sendMessage(waId._serialized, 
+                  ecpId == "678f89da98becb24b578c3a5" ? leadMessagePrequalificaVolta : 
+                  leads.prequalificaSpostato && (ecpId == "64c8d506f67b84dfe65a2d8f" || ecpId == "668512a3e704f9d7c83d5c59") ? leadMessagePrequalificaComparacorsi : 
+                  leadMessage)
                     .then(() => console.log("Messaggio inviato a", knownEcp.name, "per la lead:", leads.nome, leads.cognome))
                     .catch(error => console.error("Errore nell'invio del messaggio:", error));
                 console.log(`Messaggio inviato a ${knownEcp.name}`);
