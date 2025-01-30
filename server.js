@@ -10,6 +10,17 @@ const { ECP } = require('./ECP');
 
 let sessionObj = {};
 
+const formatDate = (dateString) => {
+  const [datePart, timePart] = dateString.split(' ');
+  const [year, month, day] = datePart.split('-');
+  const [hours, minutes] = timePart.split(':');
+
+  const date = new Date(`20${year}-${month}-${day}T${hours}:${minutes}:00`);
+  const formattedDate = `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${date.getFullYear()} alle ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
+
+  return formattedDate;
+};
+
 mongoose.connect('mongodb+srv://mattianorisbusiness:rTn5AIQzwPXqitLJ@db0.8jby7.mongodb.net/?retryWrites=true&w=majority&appName=DB0').then(() => {
   const store = new MongoStore({ mongoose: mongoose });
   console.log('MongoDB Connesso!!!')
@@ -100,7 +111,7 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:rTn5AIQzwPXqitLJ@db0.8jby7.m
             if (knownEcp) {
               const leadMessage = `È entrata una nuova lead${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
               const leadMessagePrequalificaVolta = `È entrata una nuova lead Qualificata! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}\n• ${leads.corsoInteressato || ""}\n• ${leads.provincia || ""}`;
-              const leadMessagePrequalificaComparacorsi = `È entrata una nuova lead Qualificata${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
+              const leadMessagePrequalificaComparacorsi = `È entrata una nuova lead Qualificata${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono} ${leads.appDate && leads.appDate !== "" ? `\n• Appuntamento: ${formatDate(leads.appDate)}` : ""}`;
                 //const leadMessage = `È entrata una nuova lead! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
                 const { waId } = knownEcp;
 
