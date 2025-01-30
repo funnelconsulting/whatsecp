@@ -106,10 +106,12 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:rTn5AIQzwPXqitLJ@db0.8jby7.m
     try {
         const ecpId = req.body.ecpId; 
         const leads = req.body.leads;
+        const volta = req.body.volta;
         const orientatore = req.body.orientatore ? req.body.orientatore : null;
           const knownEcp = ECP.find(item => item._id === ecpId);
             if (knownEcp) {
               const leadMessage = `È entrata una nuova lead${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
+              const leadMessageVolta = `È entrata una nuova lead${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''} per istituto Volta! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
               const leadMessagePrequalificaVolta = `È entrata una nuova lead Qualificata! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}\n• ${leads.corsoInteressato || ""}\n• ${leads.provincia || ""}`;
               const leadMessagePrequalificaComparacorsi = `È entrata una nuova lead Qualificata${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono} ${leads.appDate && leads.appDate !== "" ? `\n• Appuntamento: ${formatDate(leads.appDate)}` : ""}`;
                 //const leadMessage = `È entrata una nuova lead! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono}`;
@@ -118,6 +120,7 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:rTn5AIQzwPXqitLJ@db0.8jby7.m
                 await client.sendMessage(waId._serialized, 
                   ecpId == "678f89da98becb24b578c3a5" ? leadMessagePrequalificaVolta : 
                   leads.prequalificaSpostato && (ecpId == "64c8d506f67b84dfe65a2d8f" || ecpId == "668512a3e704f9d7c83d5c59") ? leadMessagePrequalificaComparacorsi : 
+                  volta ? leadMessageVolta :
                   leadMessage)
                     .then(() => console.log("Messaggio inviato a", knownEcp.name, "per la lead:", leads.nome, leads.cognome))
                     .catch(error => console.error("Errore nell'invio del messaggio:", error));
