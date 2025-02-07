@@ -889,23 +889,25 @@ exports.ECP = [
           _serialized: '120363373393305815@g.us'
         },
       },
-      /*{
+      {
         _id: "668e64cf0812b371990af427", 
         name:"Gruppo input srl unipersonale",
         groupName: "LeadSystem - Input",
         waId: {
           server: 'g.us',
-          user: '120363373393305815',
-          _serialized: '120363373393305815@g.us'
+          user: '120363375782501387',
+          _serialized: '120363375782501387@g.us'
         },
-      },*/
-      /*{
+
+      },
+      {
         _id: "64ef0634478c8705077839ce", 
         name:"Atena srls",
         groupName: "LeadSystem - Polo Didattico CL (Atena srls)",
         waId: {
           server: 'g.us',
-          user: '120363373393305815',
-          _serialized: '120363373393305815@g.us'
-      }*/
+          user: '120363379868655995',
+          _serialized: '120363379868655995@g.us'
+        },
+      },
   ]
