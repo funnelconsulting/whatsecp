@@ -910,14 +910,14 @@ exports.ECP = [
           _serialized: '120363379868655995@g.us'
         },
       },
-      /*{
+      {
         _id: "67a4ce3bd7a3e6413dc762e9", 
         name:"Formamentis srls",
         groupName: "LeadSystem - Flem",
         waId: {
           server: 'g.us',
-          user: '120363379868655995',
-          _serialized: '120363379868655995@g.us'
+          user: '120363393856934969',
+          _serialized: '120363393856934969@g.us'
         },
-      },*/
+      },
   ]
