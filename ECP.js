@@ -920,4 +920,24 @@ exports.ECP = [
           _serialized: '120363393856934969@g.us'
         },
       },
+      /*{
+        _id: "67b5e7addd9709f728e108a5", 
+        name:"MultiPoint SRL",
+        groupName: "LeadSystem - Multipoint",
+        waId: {
+          server: 'g.us',
+          user: '120363393856934969',
+          _serialized: '120363393856934969@g.us'
+        },
+      },
+      {
+        _id: "67b7474ddd9709f728e15bf9", 
+        name:"Iervolino Scuole SRL",
+        groupName: "LeadSystem - Carissimi",
+        waId: {
+          server: 'g.us',
+          user: '120363393856934969',
+          _serialized: '120363393856934969@g.us'
+        },
+      },*/
   ]
