@@ -920,14 +920,14 @@ exports.ECP = [
           _serialized: '120363393856934969@g.us'
         },
       },
-      /*{
+      {
         _id: "67b5e7addd9709f728e108a5", 
         name:"MultiPoint SRL",
         groupName: "LeadSystem - Multipoint",
         waId: {
           server: 'g.us',
-          user: '120363393856934969',
-          _serialized: '120363393856934969@g.us'
+          user: '120363406032988023',
+          _serialized: '120363406032988023@g.us'
         },
       },
       {
@@ -936,8 +936,8 @@ exports.ECP = [
         groupName: "LeadSystem - Carissimi",
         waId: {
           server: 'g.us',
-          user: '120363393856934969',
-          _serialized: '120363393856934969@g.us'
+          user: '120363388701589849',
+          _serialized: '120363388701589849@g.us'
         },
-      },*/
+      },
   ]
