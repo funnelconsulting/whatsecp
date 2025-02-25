@@ -940,4 +940,14 @@ exports.ECP = [
           _serialized: '120363388701589849@g.us'
         },
       },
+      {
+        _id: "6543cb1a965bb7c7a6580695", 
+        name:"MET Spazio Cultura Soc. Cooperativa Soc.",
+        groupName: "LeadSystem - MET Spazio Cultura",
+        waId: {
+          server: 'g.us',
+          user: '120363405895862464',
+          _serialized: '120363405895862464@g.us'
+        },
+      },
   ]
