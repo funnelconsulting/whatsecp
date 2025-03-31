@@ -956,8 +956,8 @@ exports.ECP = [
         groupName: "LeadSystem - Agenzia Formativa",
         waId: {
           server: 'g.us',
-          user: '120363405895862464',
-          _serialized: '120363405895862464@g.us'
+          user: '120363257182881407',
+          _serialized: '120363257182881407@g.us'
         },
       },
   ]
