@@ -960,4 +960,14 @@ exports.ECP = [
           _serialized: '120363257182881407@g.us'
         },
       },
+      /*{
+        _id: "67ee68e76d82743339963996", 
+        name:"ITS TAM Tessile Abbigliamento Moda",
+        groupName: "LeadSystem - ITS TAM & GEM",
+        waId: {
+          server: 'g.us',
+          user: '120363257182881407',
+          _serialized: '120363257182881407@g.us'
+        },
+      },*/
   ]
