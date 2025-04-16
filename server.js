@@ -119,7 +119,7 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:rTn5AIQzwPXqitLJ@db0.8jby7.m
 
                 await client.sendMessage(waId._serialized, 
                   ecpId == "678f89da98becb24b578c3a5" ? leadMessagePrequalificaVolta : 
-                  leads.prequalificaSpostato && (ecpId == "64c8d506f67b84dfe65a2d8f" || ecpId == "668512a3e704f9d7c83d5c59") ? leadMessagePrequalificaComparacorsi : 
+                  leads.prequalificaSpostato && (ecpId == "64c8d506f67b84dfe65a2d8f" || ecpId == "668512a3e704f9d7c83d5c59" || ecpId == "67b5e7addd9709f728e108a5") ? leadMessagePrequalificaComparacorsi : 
                   volta ? leadMessageVolta :
                   leadMessage)
                     .then(() => console.log("Messaggio inviato a", knownEcp.name, "per la lead:", leads.nome, leads.cognome))
