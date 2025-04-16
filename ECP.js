@@ -980,4 +980,14 @@ exports.ECP = [
           _serialized: '120363418166562060@g.us'
         },
       },
+      /*{
+        _id: "67f7c8767408f339942c2fe3", 
+        name:"centro di Formazione Sestante srls",
+        groupName: "LeadSystem - Sestante",
+        waId: {
+          server: 'g.us',
+          user: '120363418166562060',
+          _serialized: '120363418166562060@g.us'
+        },
+      },*/
   ]
