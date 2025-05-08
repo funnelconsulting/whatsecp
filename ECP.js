@@ -990,14 +990,14 @@ exports.ECP = [
           _serialized: '120363417809161634@g.us'
         },
       },
-      /*{
+      {
         _id: "6818abe6cd8ce1042990e3f4", 
         name:"Gila formazione srls",
         groupName: "LeadSystem - Polo Iniziative",
         waId: {
           server: 'g.us',
-          user: '120363417809161634',
-          _serialized: '120363417809161634@g.us'
+          user: '120363419007010044',
+          _serialized: '120363419007010044@g.us'
         },
-      },*/
+      },
   ]
