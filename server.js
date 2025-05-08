@@ -61,7 +61,7 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:rTn5AIQzwPXqitLJ@db0.8jby7.m
     console.log('Client is ready!');
     client.getChats().then(async(chats) => {
       //console.log(chats[0])
-      const group1 = chats.filter(c => c.name?.trim() === "LeadSystem - Sestante");
+      const group1 = chats.filter(c => c.name?.trim() === "LeadSystem - Polo Iniziative");
       //const group2 = chats.filter(c => c.name.trim() === "LeadSystem - Flem");
       //const group3 = chats.filter(c => c.name.trim() === "LeadSystem - Carissimi");
       //const group4 = chats.filter(c => c.name.trim() === "LeadSystem - Pre-qualifica ComparaCorsi");
