@@ -1000,4 +1000,14 @@ exports.ECP = [
           _serialized: '120363419007010044@g.us'
         },
       },
+      /*{
+        _id: "6821ed06555f285847c0ca0e", 
+        name:"KRONOS CENTRO STUDI E FORMAZIONE di CARM",
+        groupName: "LeadSystem - Kronos",
+        waId: {
+          server: 'g.us',
+          user: '120363419007010044',
+          _serialized: '120363419007010044@g.us'
+        },
+      },*/
   ]
