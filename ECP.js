@@ -1010,14 +1010,14 @@ exports.ECP = [
           _serialized: '120363400972485537@g.us'
         },
       },
-      /*{
+      {
         _id: "67ffc40cda4b95f66097087b", 
         name:"Tutornow Srl",
         groupName: "LeadSystem - Tutor Now",
         waId: {
           server: 'g.us',
-          user: '120363400972485537',
-          _serialized: '120363400972485537@g.us'
+          user: '120363418361172485',
+          _serialized: '120363418361172485@g.us'
         },
       },
       {
@@ -1026,8 +1026,8 @@ exports.ECP = [
         groupName: "LeadSystem - Macrea (MRC srl)",
         waId: {
           server: 'g.us',
-          user: '120363400972485537',
-          _serialized: '120363400972485537@g.us'
+          user: '120363399026277928',
+          _serialized: '120363399026277928@g.us'
         },
       },
       {
@@ -1036,8 +1036,8 @@ exports.ECP = [
         groupName: "LeadSystem - Corsi Uni",
         waId: {
           server: 'g.us',
-          user: '120363400972485537',
-          _serialized: '120363400972485537@g.us'
+          user: '120363419746854146',
+          _serialized: '120363419746854146@g.us'
         },
       },
       {
@@ -1046,8 +1046,8 @@ exports.ECP = [
         groupName: "LeadSystem - Delma Formazione",
         waId: {
           server: 'g.us',
-          user: '120363400972485537',
-          _serialized: '120363400972485537@g.us'
+          user: '120363399990947889',
+          _serialized: '120363399990947889@g.us'
         },
-      },*/
+      },
   ]
