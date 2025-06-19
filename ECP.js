@@ -1050,14 +1050,14 @@ exports.ECP = [
           _serialized: '120363399990947889@g.us'
         },
       },
-      /*{
+      {
         _id: "683efd65b5bf16049c8e5af6", 
         name:"IO SONO SRL",
         groupName: "LeadSystem - Ansi Faenza (IoSono srl)",
         waId: {
           server: 'g.us',
-          user: '120363419746854146',
-          _serialized: '120363419746854146@g.us'
+          user: '120363402249977717',
+          _serialized: '120363402249977717@g.us'
         },
       },
       {
@@ -1066,8 +1066,8 @@ exports.ECP = [
         groupName: "LeadSystem - Santa Maria",
         waId: {
           server: 'g.us',
-          user: '120363399990947889',
-          _serialized: '120363399990947889@g.us'
+          user: '120363420042259666',
+          _serialized: '120363420042259666@g.us'
         },
-      },*/
+      },
   ]
