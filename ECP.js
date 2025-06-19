@@ -1050,4 +1050,24 @@ exports.ECP = [
           _serialized: '120363399990947889@g.us'
         },
       },
+      /*{
+        _id: "683efd65b5bf16049c8e5af6", 
+        name:"IO SONO SRL",
+        groupName: "LeadSystem - Ansi Faenza (IoSono srl)",
+        waId: {
+          server: 'g.us',
+          user: '120363419746854146',
+          _serialized: '120363419746854146@g.us'
+        },
+      },
+      {
+        _id: "684840762e5939c5c5e66a96", 
+        name:"C.S.V. Centro Studi Vanvitelli S.R.L.S.",
+        groupName: "LeadSystem - Santa Maria",
+        waId: {
+          server: 'g.us',
+          user: '120363399990947889',
+          _serialized: '120363399990947889@g.us'
+        },
+      },*/
   ]

@@ -61,14 +61,14 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:rTn5AIQzwPXqitLJ@db0.8jby7.m
     console.log('Client is ready!');
     client.getChats().then(async(chats) => {
       //console.log(chats[0])
-      const group1 = chats.filter(c => c.name?.trim() === "LeadSystem - Tutor Now");
-      const group2 = chats.filter(c => c.name.trim() === "LeadSystem - Macrea (MRC srl)");
-      const group3 = chats.filter(c => c.name.trim() === "LeadSystem - Corsi Uni");
-      const group4 = chats.filter(c => c.name.trim() === "LeadSystem - Delma Formazione");
+      const group1 = chats.filter(c => c.name?.trim() === "LeadSystem - Ansi Faenza (IoSono srl)");
+      const group2 = chats.filter(c => c.name.trim() === "LeadSystem - Santa Maria");
+      //const group3 = chats.filter(c => c.name.trim() === "LeadSystem - Corsi Uni");
+      //const group4 = chats.filter(c => c.name.trim() === "LeadSystem - Delma Formazione");
       console.log(group1)
       console.log(group2)
-      console.log(group3)
-      console.log(group4)
+      //console.log(group3)
+      //console.log(group4)
 
       /*if (group1) {
         try {
