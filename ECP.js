@@ -1076,8 +1076,8 @@ exports.ECP = [
         groupName: "LeadSystem - Epicode",
         waId: {
           server: 'g.us',
-          user: '120363420042259666',
-          _serialized: '120363420042259666@g.us'
+          user: '120363419326677627',
+          _serialized: '120363419326677627@g.us'
         },
       },
   ]
