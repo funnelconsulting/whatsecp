@@ -1070,4 +1070,14 @@ exports.ECP = [
           _serialized: '120363420042259666@g.us'
         },
       },
+      {
+        _id: "68238ce6555f285847c1336d", 
+        name:"Epicode srl",
+        groupName: "LeadSystem - Epicode",
+        waId: {
+          server: 'g.us',
+          user: '120363420042259666',
+          _serialized: '120363420042259666@g.us'
+        },
+      },
   ]
