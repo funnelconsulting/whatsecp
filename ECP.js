@@ -1080,4 +1080,14 @@ exports.ECP = [
           _serialized: '120363419326677627@g.us'
         },
       },
+      {
+        _id: "685bfd3a436acf0b0a241bc3", 
+        name:"PRIMA GROUP SRL",
+        groupName: "LeadSystem - Prima Group",
+        waId: {
+          server: 'g.us',
+          user: '120363400996411288',
+          _serialized: '120363400996411288@g.us'
+        },
+      },
   ]
