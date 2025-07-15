@@ -1090,14 +1090,14 @@ exports.ECP = [
           _serialized: '120363400996411288@g.us'
         },
       },
-      /*{
+      {
         _id: "6874d869c6fd3a330f3760ee", 
         name:"UNIATLAS SRL",
         groupName: "LeadSystem - Vercelli (UNIATLAS)",
         waId: {
           server: 'g.us',
-          user: '120363400996411288',
-          _serialized: '120363400996411288@g.us'
+          user: '120363419102649564',
+          _serialized: '120363419102649564@g.us'
         },
       },
       {
@@ -1106,8 +1106,8 @@ exports.ECP = [
         groupName: "LeadSystem - Ansi Somma",
         waId: {
           server: 'g.us',
-          user: '120363400996411288',
-          _serialized: '120363400996411288@g.us'
+          user: '120363421979185488',
+          _serialized: '120363421979185488@g.us'
         },
-      },*/
+      },
   ]
