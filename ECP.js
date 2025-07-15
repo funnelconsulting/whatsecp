@@ -1090,4 +1090,24 @@ exports.ECP = [
           _serialized: '120363400996411288@g.us'
         },
       },
+      /*{
+        _id: "6874d869c6fd3a330f3760ee", 
+        name:"UNIATLAS SRL",
+        groupName: "LeadSystem - Vercelli (UNIATLAS)",
+        waId: {
+          server: 'g.us',
+          user: '120363400996411288',
+          _serialized: '120363400996411288@g.us'
+        },
+      },
+      {
+        _id: "68753316c6fd3a330f37ab1a", 
+        name:"società cooperativa il sapere centro studi",
+        groupName: "LeadSystem - Ansi Somma",
+        waId: {
+          server: 'g.us',
+          user: '120363400996411288',
+          _serialized: '120363400996411288@g.us'
+        },
+      },*/
   ]
