@@ -5,7 +5,7 @@
   "homepage": "https://leadsystem.tech",
   "scripts": {
     "start": "nodemon server.js",
-    "heroku-postbuild": "npm install && mkdir  ./.cache && mv /app/.cache/puppeteer ./.cache"
+    "heroku-postbuild": "pnpm i && mkdir  ./.cache && mv /app/.cache/puppeteer ./.cache"
   },
   "keywords": [],
   "author": "",
