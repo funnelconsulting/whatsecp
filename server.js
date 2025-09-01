@@ -38,6 +38,7 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:rTn5AIQzwPXqitLJ@db0.8jby7.m
         remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2410.1.html',
       },
       puppeteer: {
+        executablePath: '/app/.apt/usr/bin/google-chrome',
         headless: true,
         args: [
             '--no-sandbox',
