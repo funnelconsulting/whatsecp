@@ -1,5 +1,5 @@
 echo -e "Store puppeteer executable in cache\n"
 
-mkdir ./.cache
+# mkdir ./.cache
 
-mv /app/.cache/puppeteer ./.cache
+# mv /app/.cache/puppeteer ./.cache
