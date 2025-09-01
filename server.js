@@ -38,12 +38,17 @@ mongoose.connect('mongodb+srv://mattianorisbusiness:rTn5AIQzwPXqitLJ@db0.8jby7.m
         remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2410.1.html',
       },
       puppeteer: {
-        // executablePath: '/app/node_modules/.pnpm/node_modules/chromium-bidi',
+        executablePath: "/app/.chrome-for-testing/chrome-linux64/chrome",
         headless: true,
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
-
+            // '--disable-dev-shm-usage',
+            // '--disable-accelerated-2d-canvas',
+            // '--no-first-run',
+            // '--no-zygote',
+            // '--single-process', // Necessario per ambienti con risorse limitate
+            // '--disable-gpu'
         ]
       }
     });
