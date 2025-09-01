@@ -4,8 +4,7 @@
   "main": "server.js",
   "homepage": "https://leadsystem.tech",
   "scripts": {
-    "start": "nodemon server.js",
-    "heroku-postbuild": "pnpm i && mkdir  ./.cache && mv /app/.cache/puppeteer ./.cache"
+    "start": "nodemon server.js"  
   },
   "keywords": [],
   "author": "",
