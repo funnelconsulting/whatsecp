@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/cors": "11.1.0",
+    "@fastify/static": "8.2.0",
     "axios": "^0.21.4",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
