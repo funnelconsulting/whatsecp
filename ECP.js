@@ -10,6 +10,16 @@ exports.ECP = [
       },
     },
     {
+      _id: "6839c095b5bf16049c8db4fb",
+      name:  "POLO SCOLASTICO EUROPEO",
+      groupName: "LeadSystem - BRA (Polo scolastico europeo)",
+      waId: {
+        server: 'g.us',
+        user: '120363420883964496',
+        _serialized: '120363420883964496@g.us'
+      },
+    },
+    {
         _id: "65cb10d373507e4c8f22a94e", 
         name:"Centro Studi ABC", 
         groupName: "LeadSystem - Centro Studi ABC", 
