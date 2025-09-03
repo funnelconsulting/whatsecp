@@ -4,7 +4,7 @@
   "main": "server.js",
   "homepage": "https://leadsystem.tech",
   "scripts": {
-    "start": "node server.js"  
+    "start": "rm -f /usr/src/app/chrome-data/Singleton* && node server.js"  
   },
   "keywords": [],
   "author": "",
