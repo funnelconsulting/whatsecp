@@ -7,3 +7,8 @@ node_modules
 dataSession
 .wwebjs_cache
 .wwebjs_auth
+*.zip
+.pnpm-store
+chrome-data
+puppeteer
+chrome

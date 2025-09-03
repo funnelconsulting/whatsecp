@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  app:
+
+    container_name: node_app
+    working_dir: /usr/src/app
+    ports:
+      - "3080:3080"
+    # volumes:
+    #   - ./:/usr/src/app   # Mount current directory into container
+    # command: sh -c "corepack enable && corepack prepare pnpm@latest --activate && ./install-chrome.bash; pnpm run start" # Approve builds, install deps, then start
+    # environment:
+    #   - NODE_ENV=development
+    #   - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+    build:
+      context: .          # Build from current directory
+      dockerfile: Dockerfile
+
+volumes:
+  app-data:
