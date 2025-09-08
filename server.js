@@ -21,35 +21,39 @@ const formatDate = (dateString) => {
   return formattedDate;
 };
 
-mongoose.connect('mongodb+srv://mattianorisbusiness:rTn5AIQzwPXqitLJ@db0.8jby7.mongodb.net/?retryWrites=true&w=majority&appName=DB0').then(() => {
+mongoose.connect('mongodb://mongo:BuCSAcgFiReuTyiuWJwbQFaqCcqVMkVq@yamanote.proxy.rlwy.net:56523/').then(() => {
   const store = new MongoStore({ mongoose: mongoose });
   console.log('MongoDB Connesso!!!')
+  
+  
   let client;
   
   const connectClient = () => {
     client = new Client({
-      authStrategy: new RemoteAuth({
-        clientId: '1',
-        store: store,
-        backupSyncIntervalMs: 300000,
-      }),
+      // authStrategy: new LocalAuth({
+      //   clientId: '1',
+      //   dataPath: '/usr/src/app/chrome-data'
+      // }),
       webVersionCache: {
         type: 'remote',
         remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2410.1.html',
       },
       puppeteer: {
-        executablePath: "/app/.chrome-for-testing/chrome-linux64/chrome",
-        headless: true,
+        // executablePath: "/usr/src/app/puppeteer/chrome/linux-121.0.6167.85/chrome-linux64/chrome",
+        executablePath: "/usr/src/app/chrome/linux-139.0.7258.154/chrome-linux64/chrome",
+        // headless: false,
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
-            // '--disable-dev-shm-usage',
-            // '--disable-accelerated-2d-canvas',
-            // '--no-first-run',
-            // '--no-zygote',
+            '--disable-dev-shm-usage',
+            '--disable-accelerated-2d-canvas',
+            '--no-first-run',
+            '--no-zygote',
             '--single-process', // Necessario per ambienti con risorse limitate
-            // '--disable-gpu'
-        ]
+            // '--user-data-dir=/usr/src/app/chrome-data'
+            '--disable-gpu'
+        ],
+        userDataDir: '/usr/src/app/chrome-data'
       }
     });
     console.log('connessione')
