@@ -4,9 +4,11 @@ require("dotenv").config();
 const path = require("path");
 const { Client, LocalAuth, RemoteAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
+const webQrcode = require('qrcode');
 const { ECP } = require('./ECP');
 
 let sessionObj = {};
+let currentQr = null;
 
 const formatDate = (dateString) => {
   const [datePart, timePart] = dateString.split(' ');
@@ -53,6 +55,7 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
     console.log('connessione')
   /*WHATSAPP CONNECTION*/
   client.on('qr', (qr) => {
+    currentQr = qr;
     qrcode.generate(qr, { small: true });
   });
 
@@ -162,6 +165,11 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
         console.error('Errore durante l\'invio dei messaggi:', error);
         res.status(500).send('Errore durante l\'invio dei messaggi.');
     }
+  });
+
+  app.get('/qr', async (req, res) => {
+    res.setHeader("Content-Type", "image/png");
+    const stream = await webQrcode.toFileStream(res, currentQr, { type: "png" });
   });
 
   client.initialize();
