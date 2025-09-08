@@ -4,8 +4,6 @@ require("dotenv").config();
 const path = require("path");
 const { Client, LocalAuth, RemoteAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
-const { MongoStore } = require('wwebjs-mongo');
-const mongoose = require('mongoose');
 const { ECP } = require('./ECP');
 
 let sessionObj = {};
@@ -21,11 +19,7 @@ const formatDate = (dateString) => {
   return formattedDate;
 };
 
-mongoose.connect('mongodb://mongo:BuCSAcgFiReuTyiuWJwbQFaqCcqVMkVq@yamanote.proxy.rlwy.net:56523/').then(() => {
-  const store = new MongoStore({ mongoose: mongoose });
-  console.log('MongoDB Connesso!!!')
-  
-  
+new Promise(r => setTimeout(r, 1000)).then(() => {
   let client;
   
   const connectClient = () => {
