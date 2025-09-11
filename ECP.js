@@ -30,6 +30,26 @@ exports.ECP = [
         },
       },
       {
+        _id: "68b69ee7e98f958e60e54e3c", 
+        name:"Universitas", 
+        groupName: "LeadSystem - Universitas (Turro)", 
+        waId: {
+            server: 'g.us',
+            user: '120363403828525206',
+            _serialized: '120363403828525206@g.us'
+        },
+      },
+      {
+        _id: "6839c095b5bf16049c8db4fb", 
+        name:"POLO SCOLASTICO EUROPEO", 
+        groupName: "LeadSystem - BRA (Polo scolastico europeo)", 
+        waId: {
+            server: 'g.us',
+            user: '120363420883964496',
+            _serialized: '120363420883964496@g.us'
+        },
+      },
+      {
         _id: "65cdc12d2f10eb0e144f1a8f", 
         name:"CSUV", 
         groupName: "LeadSystem - CSUV", 
