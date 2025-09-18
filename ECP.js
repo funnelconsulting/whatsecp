@@ -60,6 +60,16 @@ exports.ECP = [
         },
       },
       {
+        _id: "68c30de27b3aa89dba95e3a7", 
+        name:"La Manna Formazione S.r.l.", 
+        groupName: "LeadSystem - La Manna", 
+        waId: {
+            server: 'g.us',
+            user: '120363422638650005',
+            _serialized: '120363422638650005@g.us'
+        },
+      },
+      {
         _id: "65afa267e4ba456784766915", 
         name:"DICHE SRLS", 
         groupName: "LeadSystem - Diche", 
