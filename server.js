@@ -63,7 +63,7 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
     console.log('Client is ready!');
     client.getChats().then(async(chats) => {
       //console.log(chats[0])
-      const group1 = chats.filter(c => c.name?.trim() === " LeadSystem - La Manna");
+      const group1 = chats.filter(c => c.name?.trim() === "LeadSystem - La Manna");
       // const group2 = chats.filter(c => c.name.trim() === "LeadSystem - Ansi Somma");
       // const group3 = chats.filter(c => c.name.trim().includes("LeadSystem - Universitas (Turro"));
       // const group4 = chats.filter(c => c.name.trim().includes("LeadSystem - BRA (Polo scolastico europeo)"));
