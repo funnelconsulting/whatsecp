@@ -40,6 +40,16 @@ exports.ECP = [
         },
       },
       {
+        _id: "68664c28f1a3425a8bce8a5f", 
+        name:"UNIFORM SRL", 
+        groupName: "LeadSystem - Uniform Montefalcione", 
+        waId: {
+            server: 'g.us',
+            user: '120363424803795628',
+            _serialized: '120363424803795628@g.us'
+        },
+      },
+      {
         _id: "6839c095b5bf16049c8db4fb", 
         name:"POLO SCOLASTICO EUROPEO", 
         groupName: "LeadSystem - BRA (Polo scolastico europeo)", 
