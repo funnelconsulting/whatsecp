@@ -30,6 +30,16 @@ exports.ECP = [
         },
       },
       {
+        _id: "68e67483b127f93c7d8eb1ca", 
+        name:"IL MAESTRO SRLS", 
+        groupName: "LeadSystem - Il Maestro", 
+        waId: {
+            server: 'g.us',
+            user: '120363419650270489',
+            _serialized: '120363419650270489@g.us'
+        },
+      },
+      {
         _id: "68b69ee7e98f958e60e54e3c", 
         name:"Universitas", 
         groupName: "LeadSystem - Universitas (Turro)", 
