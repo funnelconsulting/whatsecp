@@ -30,6 +30,16 @@ exports.ECP = [
         },
       },
       {
+        _id: "68f09dc7b127f93c7d90b1d7", 
+        name:"Centro Studi Meli Srl", 
+        groupName: " LeadSystem - Centro Studi Meli", 
+        waId: {
+            server: 'g.us',
+            user: '120363423515487147',
+            _serialized: '120363423515487147@g.us'
+        },
+      },
+      {
         _id: "68e67483b127f93c7d8eb1ca", 
         name:"IL MAESTRO SRLS", 
         groupName: "LeadSystem - Il Maestro", 
