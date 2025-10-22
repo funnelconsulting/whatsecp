@@ -40,6 +40,16 @@ exports.ECP = [
         },
       },
       {
+        _id: "68f8ae7dccb51d3308fea01a", 
+        name:"Formatemp", 
+        groupName: "Formatemp lead", 
+        waId: {
+          server: 'g.us',
+          user: '120363402005926492',
+          _serialized: '120363402005926492@g.us'
+        },
+      },
+      {
         _id: "68e67483b127f93c7d8eb1ca", 
         name:"IL MAESTRO SRLS", 
         groupName: "LeadSystem - Il Maestro", 
