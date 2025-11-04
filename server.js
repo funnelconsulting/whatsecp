@@ -116,7 +116,7 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
 •⁠ ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}
 •⁠ ${leads.utm_campaign}`
               const leadMessageVolta = `È entrata una nuova lead${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''} per istituto Volta! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}${leads.contenuto_utm && leads.contenuto_utm !== "" ? `\n• ${leads.contenuto_utm}` : ""}`;
-              const leadMessagePrequalificaVolta = `È entrata una nuova lead Qualificata! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}\n• ${leads.corso_interessato || ""}\n• ${leads.provincia || ""}`;
+              const leadMessagePrequalificaVolta = `È entrata una nuova lead Qualificata! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}\n• ${leads.corso_laurea || ""}\n• ${leads.provincia || ""}`;
               const leadMessagePrequalificaComparacorsi = `È entrata una nuova lead Qualificata${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono} ${leads.eventi_calendario?.[0] && leads.eventi_calendario?.[0].data !== "" ? `\n• Appuntamento: ${formatDate(leads.eventi_calendario?.[0].data)}` : ""}`;
                 //const leadMessage = `È entrata una nuova lead! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}`;
                 const { waId } = knownEcp;
