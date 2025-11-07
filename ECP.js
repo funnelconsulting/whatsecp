@@ -280,6 +280,16 @@ exports.ECP = [
         },
       },
       {
+        _id: "68f0bbd5b127f93c7d90c460", 
+        name:"X-FORMAZIONE DI CRISEO NICOLA", 
+        groupName: "LeadSystem - Rho", 
+        waId: {
+            server: 'g.us',
+            user: '120363421744878348',
+            _serialized: '120363421744878348@g.us'
+        },
+      },
+      {
         _id: "65eb458c515cbdb618baa305", 
         name:"Sharing Lab Associazione Culturale e di Promozione Sociale", 
         groupName: "LeadSystem - Sharing Lab", 
