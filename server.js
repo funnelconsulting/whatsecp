@@ -59,7 +59,7 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
     console.log('Client is ready!');
     client.getChats().then(async(chats) => {
       //console.log(chats[0])
-      const group1 = chats.filter(c => c.name?.includes("Formatemp lead"));
+      const group1 = chats.filter(c => c.name?.toLowerCase().includes("Leadystem"));
       // const group2 = chats.filter(c => c.name.trim() === "LeadSystem - Ansi Somma");
       // const group3 = chats.filter(c => c.name.trim().includes("LeadSystem - Universitas (Turro"));
       // const group4 = chats.filter(c => c.name.trim().includes("LeadSystem - BRA (Polo scolastico europeo)"));
@@ -100,6 +100,13 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
   client.on('auth_failure', () => {
     console.log('Fallimento dell\'autenticazione. Riavvio del server...');
     process.exit(1);
+  });
+
+  app.get("groups/:query", async (req, res) => {
+    const query = req.params.query;
+    const groups = await client.getChats();
+    const group = groups.filter(g => g.name?.toLowerCase().includes(query.toLowerCase())).map(g =>( {name: g.name, id: g.id._serialized}));
+    res.status(200).json(group);
   });
 
   app.post('/webhook-lead-ecp-notification', async (req, res) => {
