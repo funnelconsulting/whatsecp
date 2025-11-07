@@ -102,7 +102,7 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
     process.exit(1);
   });
 
-  app.get("groups/:query", async (req, res) => {
+  app.get("/groups/:query", async (req, res) => {
     const query = req.params.query;
     const groups = await client.getChats();
     const group = groups.filter(g => g.name?.toLowerCase().includes(query.toLowerCase())).map(g =>( {name: g.name, id: g.id._serialized}));
