@@ -290,6 +290,16 @@ exports.ECP = [
         },
       },
       {
+        _id: "6917038a63c64b0cea59588e", 
+        name:"Go Up Group srls", 
+        groupName: "LeadSystem - Go Up", 
+        waId: {
+            server: 'g.us',
+            user: '120363425103178875',
+            _serialized: '120363425103178875@g.us'
+        },
+      },
+      {
         _id: "65eb458c515cbdb618baa305", 
         name:"Sharing Lab Associazione Culturale e di Promozione Sociale", 
         groupName: "LeadSystem - Sharing Lab", 
