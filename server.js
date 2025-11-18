@@ -129,7 +129,7 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
                 const { waId } = knownEcp;
 
                 await client.sendMessage(waId._serialized, 
-                  ecpId == "678f89da98becb24b578c3a5" ? leadMessagePrequalificaVolta : 
+                  (ecpId == "678f89da98becb24b578c3a5" || ecpId == '691b489963c64b0cea5c73f5') ? leadMessagePrequalificaVolta : 
                   leads.prequalificazione_spostata && (ecpId == "64c8d506f67b84dfe65a2d8f" || ecpId == "668512a3e704f9d7c83d5c59" || ecpId == "67b5e7addd9709f728e108a5") ? leadMessagePrequalificaComparacorsi : 
                   volta ? leadMessageVolta : ecpId == "68f8ae7dccb51d3308fea01a" ? leadMessageFormatemp :
                   leadMessage)

@@ -290,6 +290,16 @@ exports.ECP = [
         },
       },
       {
+        _id: "691b489963c64b0cea5c73f5", 
+        name:"Istituto Elvetico SRL", 
+        groupName: "ComparaCorsi - Istituto Elvetico", 
+        waId: {
+            server: 'g.us',
+            user: '120363422966232961',
+            _serialized: '120363422966232961@g.us'
+        },
+      },
+      {
         _id: "6917038a63c64b0cea59588e", 
         name:"Go Up Group srls", 
         groupName: "LeadSystem - Go Up", 
