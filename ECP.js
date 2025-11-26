@@ -210,6 +210,16 @@ exports.ECP = [
         },
       },
       {
+        _id: "6926d8f51f1ecacedb3229f7", 
+        name:"Uniweb srl", 
+        groupName: "LeadSystem - Marketing Uniweb", 
+        waId: {
+            server: 'g.us',
+            user: '120363423598859065',
+            _serialized: '120363423598859065@g.us'
+        },
+      },
+      {
         _id: "651acf7e7ccf14d8d809fc5c", 
         name:"Piccola Università Italiana", 
         groupName: "LeadSystem - Piccola Università Italiana", 
