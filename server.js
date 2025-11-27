@@ -109,6 +109,39 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
     res.status(200).json(group);
   });
 
+  app.post('/webhook-lead-ecp-prequalifica', async (req, res) => {
+    console.log(req.body)
+    try {
+        const ecpId = req.body.ecpId; 
+        const leads = req.body.leads;
+        const newStatus = req.body.newStatus;
+        const orientatore = req.body.orientatore ? req.body.orientatore : null;
+          const knownEcp = ECP.find(item => item._id === ecpId);
+            if (knownEcp) {
+              const leadMessageSQL = `È entrata una nuova lead Qualificata${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.
+•⁠  ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono} 
+•⁠  ${leads.eventi_calendario?.[0] && leads.eventi_calendario?.[0].data !== "" ? `\n• Appuntamento: ${formatDate(leads.eventi_calendario?.[0].data)}` : ""}`
+              const leadMessageIrraggiungibile = `È entrata una nuova lead non qualificata da richiamare${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.
+•⁠  ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}`
+              const leadMessage = newStatus === "SQL" ? leadMessageSQL : leadMessageIrraggiungibile;
+              
+                //const leadMessage = `È entrata una nuova lead! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}`;
+                const { waId } = knownEcp;
+
+                await client.sendMessage(waId._serialized, leadMessage)
+                    .then(() => console.log("Messaggio inviato a", knownEcp.name, "per la lead:", leads.nome, leads.cognome))
+                    .catch(error => console.error("Errore nell'invio del messaggio:", error));
+                console.log(`Messaggio inviato a ${knownEcp.name}`);
+            } else {
+                console.log(`ECP non trovato con id: ${ecpId}`);
+            }
+        res.status(200).send('Messaggi inviati con successo agli ECP.');
+    } catch (error) {
+        console.error('Errore durante l\'invio dei messaggi:', error);
+        res.status(500).send('Errore durante l\'invio dei messaggi.');
+    }
+  });
+
   app.post('/webhook-lead-ecp-notification', async (req, res) => {
     console.log(req.body)
     try {
