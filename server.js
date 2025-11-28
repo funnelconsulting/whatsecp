@@ -6,12 +6,18 @@ const { Client, LocalAuth, RemoteAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const webQrcode = require('qrcode');
 const { ECP } = require('./ECP');
+const moment = require('moment');
 
 let sessionObj = {};
 let currentQr = null;
 
 const formatDate = (dateString) => {
-  const date = new Date(dateString);
+  const tempDate = new Date(dateString);
+  
+  const minutesOffset = moment.tz(new Date(), 'Europe/Rome').utcOffset();
+
+  const date = new Date(tempDate.getTime() + minutesOffset * 60000);
+
   const formattedDate = `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${date.getFullYear()} alle ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
 
   return formattedDate;
