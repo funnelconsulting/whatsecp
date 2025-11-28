@@ -120,7 +120,7 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
             if (knownEcp) {
               const leadMessageSQL = `È entrata una nuova lead Qualificata${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.
 •⁠  ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono} 
-•⁠  ${leads.eventi_calendario?.[0] && leads.eventi_calendario?.[0].data !== "" ? `\n• Appuntamento: ${formatDate(leads.eventi_calendario?.[0].data)}` : ""}`
+${leads.eventi_calendario?.[0] && leads.eventi_calendario?.[0].data !== "" ? `• Appuntamento: ${formatDate(leads.eventi_calendario?.[0].data)}` : ""}`
               const leadMessageIrraggiungibile = `È entrata una nuova lead non qualificata da richiamare${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.
 •⁠  ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}`
               const leadMessage = newStatus === "SQL" ? leadMessageSQL : leadMessageIrraggiungibile;
