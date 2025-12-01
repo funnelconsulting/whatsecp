@@ -4,7 +4,7 @@
   "main": "server.js",
   "homepage": "https://leadsystem.tech",
   "scripts": {
-    "start": "rm -f /usr/src/app/chrome-data/Singleton* && node server.js"  
+    "start": "rm -f /usr/src/app/chrome-data/Singleton* && node server.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
     "express-jwt": "^6.1.0",
     "fs": "^0.0.1-security",
     "moment": "^2.29.4",
+    "moment-timezone": "^0.6.0",
     "mongoose": "^6.0.8",
     "node-cron": "^3.0.2",
     "nodemailer": "^6.9.1",

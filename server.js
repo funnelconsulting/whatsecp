@@ -6,7 +6,7 @@ const { Client, LocalAuth, RemoteAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const webQrcode = require('qrcode');
 const { ECP } = require('./ECP');
-const moment = require('moment');
+const momentTimezone = require('moment-timezone');
 
 let sessionObj = {};
 let currentQr = null;
@@ -14,7 +14,7 @@ let currentQr = null;
 const formatDate = (dateString) => {
   const tempDate = new Date(dateString);
   
-  const minutesOffset = moment.tz(new Date(), 'Europe/Rome').utcOffset();
+  const minutesOffset = momentTimezone.tz(new Date(), 'Europe/Rome').utcOffset();
 
   const date = new Date(tempDate.getTime() + minutesOffset * 60000);
 
