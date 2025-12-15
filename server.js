@@ -119,9 +119,9 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
     console.log(req.body)
     try {
         const appointment = new Date(req.body.appointment);
-        const {nome, cognome, email, ecpId} = req.body;
+        const {nome, cognome, telefono, ecpId} = req.body;
 
-        const message = `La lead ${nome} ${cognome} con email ${email} ha effettuato l'appuntamento il ${appointment.toLocaleDateString()} alle ${appointment.toLocaleTimeString()}.`;
+        const message = `La lead ${nome} ${cognome} con telefono ${telefono} ha effettuato l'appuntamento il ${appointment.toLocaleDateString()} alle ${appointment.toLocaleTimeString()}.`;
         
         const knownEcp = ECP.find(item => item._id === ecpId);
         if (knownEcp) {
@@ -185,6 +185,9 @@ ${leads.eventi_calendario?.[0] && leads.eventi_calendario?.[0].data !== "" ? `�
               const leadMessageFormatemp = `È entrata una nuova lead per Formatemp! contattala subito.
 •⁠ ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}
 •⁠ ${leads.utm_campaign}`
+const leadMessageEpicode = `È entrata una nuova lead per Formatemp! contattala subito.
+•⁠ ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}
+•⁠ ${leads.corso}`
               const leadMessageVolta = `È entrata una nuova lead${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''} per istituto Volta! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}${leads.contenuto_utm && leads.contenuto_utm !== "" ? `\n• ${leads.contenuto_utm}` : ""}`;
               const leadMessagePrequalificaVolta = `È entrata una nuova lead Qualificata! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}\n• ${leads.corso_laurea || ""}\n• ${leads.provincia || ""}`;
               const leadMessagePrequalificaComparacorsi = `È entrata una nuova lead Qualificata${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono} ${leads.eventi_calendario?.[0] && leads.eventi_calendario?.[0].data !== "" ? `\n• Appuntamento: ${formatDate(leads.eventi_calendario?.[0].data)}` : ""}`;
@@ -194,7 +197,7 @@ ${leads.eventi_calendario?.[0] && leads.eventi_calendario?.[0].data !== "" ? `�
                 await client.sendMessage(waId._serialized, 
                   (ecpId == "678f89da98becb24b578c3a5" || ecpId == '691b489963c64b0cea5c73f5') ? leadMessagePrequalificaVolta : 
                   leads.prequalificazione_spostata && (ecpId == "64c8d506f67b84dfe65a2d8f" || ecpId == "668512a3e704f9d7c83d5c59" || ecpId == "67b5e7addd9709f728e108a5") ? leadMessagePrequalificaComparacorsi : 
-                  volta ? leadMessageVolta : ecpId == "68f8ae7dccb51d3308fea01a" ? leadMessageFormatemp :
+                  volta ? leadMessageVolta : ecpId == "68f8ae7dccb51d3308fea01a" ? leadMessageFormatemp : ecpId == "69400a2c1dd4dd5a570d7eea" ? leadMessageEpicode :
                   leadMessage)
                     .then(() => console.log("Messaggio inviato a", knownEcp.name, "per la lead:", leads.nome, leads.cognome))
                     .catch(error => console.error("Errore nell'invio del messaggio:", error));
