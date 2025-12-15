@@ -136,6 +136,7 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
     } catch (error) {
         console.error('Errore durante l\'invio del messaggio:', error);
     }
+    res.status(200).send('Messaggio inviato con successo agli ECP.');
   });
 
   app.post('/webhook-lead-ecp-prequalifica', async (req, res) => {
