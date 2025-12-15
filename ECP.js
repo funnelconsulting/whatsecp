@@ -20,6 +20,16 @@ exports.ECP = [
       },
     },
     {
+      _id: "69400a2c1dd4dd5a570d7eea",
+      name:  "Epicode",
+      groupName: "Professional AI Epicode",
+      waId: {
+        server: 'g.us',
+        user: '120363406790768586',
+        _serialized: '120363406790768586@g.us'
+      },
+    },
+    {
         _id: "65cb10d373507e4c8f22a94e", 
         name:"Centro Studi ABC", 
         groupName: "LeadSystem - Centro Studi ABC", 

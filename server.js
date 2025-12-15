@@ -115,6 +115,29 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
     res.status(200).json(group);
   });
 
+  app.post('/webhook-appointment-ecp', async (req, res) => {
+    console.log(req.body)
+    try {
+        const appointment = new Date(req.body.appointment);
+        const {nome, cognome, email, ecpId} = req.body;
+
+        const message = `La lead ${nome} ${cognome} con email ${email} ha effettuato l'appuntamento il ${appointment.toLocaleDateString()} alle ${appointment.toLocaleTimeString()}.`;
+        
+        const knownEcp = ECP.find(item => item._id === ecpId);
+        if (knownEcp) {
+          await client.sendMessage(knownEcp.waId._serialized, message)
+            .then(() => console.log("Messaggio inviato a", knownEcp.name, "per la lead:", nome, cognome))
+            .catch(error => console.error("Errore nell'invio del messaggio:", error));
+          console.log(`Messaggio inviato a ${knownEcp.name}`);
+        } else {
+          console.log(`ECP non trovato con id: ${ecpId}`);
+        }
+
+    } catch (error) {
+        console.error('Errore durante l\'invio del messaggio:', error);
+    }
+  });
+
   app.post('/webhook-lead-ecp-prequalifica', async (req, res) => {
     console.log(req.body)
     try {
