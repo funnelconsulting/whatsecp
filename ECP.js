@@ -30,6 +30,16 @@ exports.ECP = [
       },
     },
     {
+      _id: "693a97e2b4456bdc5925e0cc",
+      name:  "Centro Scolastico Sant'Antonio s.r.l.",
+      groupName: "LeadSystem - Polo Del Sannio",
+      waId: {
+        server: 'g.us',
+        user: '120363404041130665',
+        _serialized: '120363404041130665@g.us'
+      },
+    },
+    {
         _id: "65cb10d373507e4c8f22a94e", 
         name:"Centro Studi ABC", 
         groupName: "LeadSystem - Centro Studi ABC", 
