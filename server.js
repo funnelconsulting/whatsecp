@@ -119,9 +119,9 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
     console.log(req.body)
     try {
         const appointment = new Date(req.body.appointment);
-        const {nome, cognome, telefono, ecpId} = req.body;
+        const {nome, cognome, telefono, ecpId, utm_content} = req.body;
 
-        const message = `La lead ${nome} ${cognome} con telefono ${telefono} ha effettuato l'appuntamento il ${appointment.toLocaleDateString()} alle ${appointment.toLocaleTimeString()}.`;
+        const message = `La lead ${nome} ${cognome} con ha effettuato l'appuntamento\n•telefono: ${telefono}\n• Appuntamento: ${appointment.toLocaleDateString()} alle ${appointment.getHours().toString().padStart(2, '0')}:${appointment.getMinutes().toString().padStart(2, '0')}\n• UTM: ${utm_content}`;
         
         const knownEcp = ECP.find(item => item._id === ecpId);
         if (knownEcp) {
