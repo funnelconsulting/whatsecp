@@ -121,7 +121,7 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
         const appointment = new Date(req.body.appointment);
         const {nome, cognome, telefono, ecpId, utm_medium} = req.body;
 
-        const message = `La lead ${nome} ${cognome} con ha effettuato l'appuntamento\n• Telefono: ${telefono}\n• Appuntamento: ${appointment.toLocaleDateString()} alle ${appointment.getHours().toString().padStart(2, '0')}:${appointment.getMinutes().toString().padStart(2, '0')}\n• Utm Medium: ${utm_medium}`;
+        const message = `La lead ${nome} ${cognome} con ha effettuato l'appuntamento\n• Telefono: ${telefono}\n• Appuntamento: ${appointment.toLocaleDateString()} alle ${appointment.getHours().toString().padStart(2, '0')}:${appointment.getMinutes().toString().padStart(2, '0')}`;
         
         const knownEcp = ECP.find(item => item._id === ecpId);
         if (knownEcp) {
@@ -185,9 +185,10 @@ ${leads.eventi_calendario?.[0] && leads.eventi_calendario?.[0].data !== "" ? `�
               const leadMessageFormatemp = `È entrata una nuova lead per Formatemp! contattala subito.
 •⁠ ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}
 •⁠ ${leads.utm_campaign}`
-const leadMessageEpicode = `È entrata una nuova lead per Formatemp! contattala subito.
+const leadMessageEpicode = `È entrata una nuova lead per Epicode! contattala subito.
 •⁠ ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}
-•⁠ ${leads.corso}`
+•⁠ ${leads.corso}
+• Utm Medium: ${leads.utm_medium}`
               const leadMessageVolta = `È entrata una nuova lead${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''} per istituto Volta! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}${leads.contenuto_utm && leads.contenuto_utm !== "" ? `\n• ${leads.contenuto_utm}` : ""}`;
               const leadMessagePrequalificaVolta = `È entrata una nuova lead Qualificata! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}\n• ${leads.corso_laurea || ""}\n• ${leads.provincia || ""}`;
               const leadMessagePrequalificaComparacorsi = `È entrata una nuova lead Qualificata${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono} ${leads.eventi_calendario?.[0] && leads.eventi_calendario?.[0].data !== "" ? `\n• Appuntamento: ${formatDate(leads.eventi_calendario?.[0].data)}` : ""}`;
