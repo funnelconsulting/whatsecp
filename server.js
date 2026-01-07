@@ -118,7 +118,13 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
   app.post('/webhook-appointment-ecp', async (req, res) => {
     console.log(req.body)
     try {
-        const appointment = new Date(req.body.appointment);
+
+        const minutesOffset = momentTimezone.tz(new Date(), 'Europe/Rome').utcOffset();
+
+        const appointment = new Date(new Date(req.body.appointment).getTime() + minutesOffset * 60000);
+    
+      
+        //const appointment = new Date(req.body.appointment);
         const {nome, cognome, telefono, ecpId, utm_medium} = req.body;
 
         const message = `La lead ${nome} ${cognome} con ha effettuato l'appuntamento\n• Telefono: ${telefono}\n• Appuntamento: ${appointment.toLocaleDateString()} alle ${appointment.getHours().toString().padStart(2, '0')}:${appointment.getMinutes().toString().padStart(2, '0')}`;
