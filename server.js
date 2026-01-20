@@ -16,6 +16,65 @@ let isConnectingClient = false;
 let routesRegistered = false;
 let reconnectTimeout = null;
 
+const WA_VERSION_HTML_DEFAULT = "2.3000.1032171053-alpha.html";
+let resolvedWaVersionHtml = null;
+let didResolveWaVersionHtml = false;
+
+const compareVersionFilenames = (a, b) => {
+  const parseParts = (name) =>
+    name
+      .replace(/\.html$/i, "")
+      .split(".")
+      .map((part) => {
+        const n = parseInt(part, 10);
+        return Number.isFinite(n) ? n : 0;
+      });
+
+  const ap = parseParts(a);
+  const bp = parseParts(b);
+  const len = Math.max(ap.length, bp.length);
+  for (let i = 0; i < len; i++) {
+    const av = ap[i] ?? 0;
+    const bv = bp[i] ?? 0;
+    if (av !== bv) return av - bv;
+  }
+  return 0;
+};
+
+const getWaVersionHtml = async () => {
+  if (didResolveWaVersionHtml) return resolvedWaVersionHtml;
+  didResolveWaVersionHtml = true;
+
+  const fromEnv = process.env.WA_VERSION_HTML;
+  if (fromEnv && typeof fromEnv === "string" && fromEnv.trim()) {
+    resolvedWaVersionHtml = fromEnv.trim();
+    console.log(`[WA] Using WA_VERSION_HTML from env: ${resolvedWaVersionHtml}`);
+    return resolvedWaVersionHtml;
+  }
+
+  try {
+    const resp = await fetch("https://api.github.com/repos/wppconnect-team/wa-version/contents/html", {
+      headers: { "User-Agent": "whatsserver" },
+    });
+    if (!resp.ok) throw new Error(`GitHub API error: ${resp.status}`);
+
+    const items = await resp.json();
+    const htmlFiles = (Array.isArray(items) ? items : [])
+      .filter((i) => i && i.type === "file" && typeof i.name === "string" && i.name.endsWith(".html"))
+      .map((i) => i.name)
+      .filter((n) => n[0] >= "0" && n[0] <= "9");
+
+    htmlFiles.sort(compareVersionFilenames);
+    resolvedWaVersionHtml = htmlFiles.at(-1) || WA_VERSION_HTML_DEFAULT;
+    console.log(`[WA] Using wa-version html: ${resolvedWaVersionHtml}`);
+    return resolvedWaVersionHtml;
+  } catch (err) {
+    resolvedWaVersionHtml = WA_VERSION_HTML_DEFAULT;
+    console.error("[WA] Failed to resolve latest wa-version html. Falling back to default.", err);
+    return resolvedWaVersionHtml;
+  }
+};
+
 const formatDate = (dateString) => {
   const tempDate = new Date(dateString);
   
@@ -51,73 +110,76 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
     isClientReady = false;
     currentQr = null;
 
-    if (client) {
-      try {
-        await client.destroy();
-      } catch (err) {
-        console.error("[WA] Error destroying previous client:", err);
-      } finally {
-        client = null;
+    try {
+      if (client) {
+        try {
+          await client.destroy();
+        } catch (err) {
+          console.error("[WA] Error destroying previous client:", err);
+        } finally {
+          client = null;
+        }
       }
-    }
 
-    client = new Client({
-      // authStrategy: new LocalAuth({
-      //   clientId: '1',
-      //   dataPath: '/usr/src/app/chrome-data'
-      // }),
-      webVersionCache: {
-        type: 'remote',
-        remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2410.1.html',
-      },
-      puppeteer: {
-        // executablePath: "/usr/src/app/puppeteer/chrome/linux-121.0.6167.85/chrome-linux64/chrome",
-        executablePath: "/usr/src/app/chrome/linux-139.0.7258.154/chrome-linux64/chrome",
-        // headless: false,
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-accelerated-2d-canvas',
-            '--no-first-run',
-            '--no-zygote',
-            '--single-process', // Necessario per ambienti con risorse limitate
-            // '--user-data-dir=/usr/src/app/chrome-data'
-            '--disable-gpu'
-        ],
-        userDataDir: '/usr/src/app/chrome-data'
-      }
+      const waVersionHtml = await getWaVersionHtml();
+
+      client = new Client({
+        // authStrategy: new LocalAuth({
+        //   clientId: '1',
+        //   dataPath: '/usr/src/app/chrome-data'
+        // }),
+        webVersionCache: {
+          type: 'remote',
+          remotePath: `https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/${waVersionHtml}`,
+        },
+        puppeteer: {
+          // executablePath: "/usr/src/app/puppeteer/chrome/linux-121.0.6167.85/chrome-linux64/chrome",
+          executablePath: "/usr/src/app/chrome/linux-139.0.7258.154/chrome-linux64/chrome",
+          // headless: false,
+          args: [
+              '--no-sandbox',
+              '--disable-setuid-sandbox',
+              '--disable-dev-shm-usage',
+              '--disable-accelerated-2d-canvas',
+              '--no-first-run',
+              '--no-zygote',
+              '--single-process', // Necessario per ambienti con risorse limitate
+              // '--user-data-dir=/usr/src/app/chrome-data'
+              '--disable-gpu'
+          ],
+          userDataDir: '/usr/src/app/chrome-data'
+        }
+      });
+      console.log('connessione')
+    /*WHATSAPP CONNECTION*/
+    client.on('qr', (qr) => {
+      currentQr = qr;
+      qrcode.generate(qr, { small: true });
     });
-    console.log('connessione')
-  /*WHATSAPP CONNECTION*/
-  client.on('qr', (qr) => {
-    currentQr = qr;
-    qrcode.generate(qr, { small: true });
-  });
 
-  client.on('ready', () => {
-    isClientReady = true;
-    console.log('Client is ready!');
-  });
+    client.on('ready', () => {
+      isClientReady = true;
+      console.log('Client is ready!');
+    });
 
-  client.on("change_state", (state) => {
-    console.log("[WA] State:", state);
-  });
-  //"whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#v1.26.0",
-  client.on("remote_session_saved", () => {
-    console.log("Sessione salvata!")
-  })
+    client.on("change_state", (state) => {
+      console.log("[WA] State:", state);
+    });
+    //"whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#v1.26.0",
+    client.on("remote_session_saved", () => {
+      console.log("Sessione salvata!")
+    })
 
-  client.on('disconnected', (reason) => {
-    scheduleReconnect(reason);
-  });
+    client.on('disconnected', (reason) => {
+      scheduleReconnect(reason);
+    });
 
-  client.on('auth_failure', (message) => {
-    console.error("[WA] Auth failure:", message);
-    scheduleReconnect("auth_failure");
-  });
+    client.on('auth_failure', (message) => {
+      console.error("[WA] Auth failure:", message);
+      scheduleReconnect("auth_failure");
+    });
 
-  if (!routesRegistered) {
+    if (!routesRegistered) {
     app.get("/groups/:query", async (req, res) => {
       if (!client || !isClientReady) {
         return res.status(503).json({ error: "WhatsApp client not ready" });
@@ -281,8 +343,10 @@ const leadMessageEpicode = `È entrata una nuova lead per Epicode! contattala su
     routesRegistered = true;
   }
 
-  await client.initialize();
-
+    await client.initialize();
+    } finally {
+      isConnectingClient = false;
+    }
   }
 
   connectClient().catch((err) => console.error("[WA] Initial connect failed:", err));
