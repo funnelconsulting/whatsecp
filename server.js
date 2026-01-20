@@ -10,6 +10,11 @@ const momentTimezone = require('moment-timezone');
 
 let sessionObj = {};
 let currentQr = null;
+let client = null;
+let isClientReady = false;
+let isConnectingClient = false;
+let routesRegistered = false;
+let reconnectTimeout = null;
 
 const formatDate = (dateString) => {
   const tempDate = new Date(dateString);
@@ -24,9 +29,38 @@ const formatDate = (dateString) => {
 };
 
 new Promise(r => setTimeout(r, 1000)).then(() => {
-  let client;
-  
-  const connectClient = () => {
+  const scheduleReconnect = (reason) => {
+    isClientReady = false;
+    currentQr = null;
+
+    if (reconnectTimeout) {
+      clearTimeout(reconnectTimeout);
+    }
+
+    console.log(`[WA] Disconnected (${reason}). Reconnect in 5s...`);
+    reconnectTimeout = setTimeout(() => {
+      reconnectTimeout = null;
+      connectClient().catch((err) => console.error("[WA] Reconnect failed:", err));
+    }, 5000);
+  };
+
+  const connectClient = async () => {
+    if (isConnectingClient) return;
+    isConnectingClient = true;
+
+    isClientReady = false;
+    currentQr = null;
+
+    if (client) {
+      try {
+        await client.destroy();
+      } catch (err) {
+        console.error("[WA] Error destroying previous client:", err);
+      } finally {
+        client = null;
+      }
+    }
+
     client = new Client({
       // authStrategy: new LocalAuth({
       //   clientId: '1',
@@ -62,58 +96,45 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
   });
 
   client.on('ready', () => {
+    isClientReady = true;
     console.log('Client is ready!');
-    client.getChats().then(async(chats) => {
-      //console.log(chats[0])
-      const group1 = chats.filter(c => c.name?.toLowerCase().includes("Rho"));
-      // const group2 = chats.filter(c => c.name.trim() === "LeadSystem - Ansi Somma");
-      // const group3 = chats.filter(c => c.name.trim().includes("LeadSystem - Universitas (Turro"));
-      // const group4 = chats.filter(c => c.name.trim().includes("LeadSystem - BRA (Polo scolastico europeo)"));
-      //const group3 = chats.filter(c => c.name.trim() === "LeadSystem - Corsi Uni");
-      //const group4 = chats.filter(c => c.name.trim() === "LeadSystem - Delma Formazione");
-      console.log(group1)
-      // console.log(group2)
-      // console.log(group3)
-      // console.log(group4)
-      //console.log(group4)
+  });
 
-      /*if (group1) {
-        try {
-          await client.sendMessage(group1[0].id._serialized, "Ciao a tutti! Questo è un messaggio di prova.");
-          console.log('Messaggio inviato con successo al gruppo 1');
-        } catch (error) {
-          console.error('Errore nell\'invio del messaggio al gruppo 1:', error);
-        }
-      } else {
-        console.log('Gruppo 1 non trovato');
-      }*/
-      //console.log(group2)
-      //console.log(group3)
-    }).catch((err) => {
-        console.error('Si è verificato un errore durante la ricerca della chat:', err);
-    });
+  client.on("change_state", (state) => {
+    console.log("[WA] State:", state);
   });
   //"whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#v1.26.0",
   client.on("remote_session_saved", () => {
     console.log("Sessione salvata!")
   })
 
-  client.on('disconnect', () => {
-    console.log('Il client WhatsApp si è disconnesso. Tentativo di riconnessione...');
-    setTimeout(connectClient, 5000);
+  client.on('disconnected', (reason) => {
+    scheduleReconnect(reason);
   });
 
-  client.on('auth_failure', () => {
-    console.log('Fallimento dell\'autenticazione. Riavvio del server...');
-    process.exit(1);
+  client.on('auth_failure', (message) => {
+    console.error("[WA] Auth failure:", message);
+    scheduleReconnect("auth_failure");
   });
 
-  app.get("/groups/:query", async (req, res) => {
-    const query = req.params.query;
-    const groups = await client.getChats();
-    const group = groups.filter(g => g.name?.toLowerCase().includes(query.toLowerCase())).map(g =>( {name: g.name, id: g.id._serialized}));
-    res.status(200).json(group);
-  });
+  if (!routesRegistered) {
+    app.get("/groups/:query", async (req, res) => {
+      if (!client || !isClientReady) {
+        return res.status(503).json({ error: "WhatsApp client not ready" });
+      }
+
+      try {
+        const query = req.params.query;
+        const groups = await client.getChats();
+        const group = groups
+          .filter(g => g.name?.toLowerCase().includes(query.toLowerCase()))
+          .map(g => ({ name: g.name, id: g.id._serialized }));
+        res.status(200).json(group);
+      } catch (err) {
+        console.error("Errore durante /groups:", err);
+        res.status(500).json({ error: "Errore durante la ricerca dei gruppi" });
+      }
+    });
 
   app.post('/webhook-appointment-ecp', async (req, res) => {
     console.log(req.body)
@@ -248,16 +269,23 @@ const leadMessageEpicode = `È entrata una nuova lead per Epicode! contattala su
     }
   });
 
-  app.get('/qr', async (req, res) => {
-    res.setHeader("Content-Type", "image/png");
-    const stream = await webQrcode.toFileStream(res, currentQr, { type: "png" });
-  });
+    app.get('/qr', async (req, res) => {
+      if (!currentQr) {
+        return res.status(404).json({ error: "QR non disponibile (già loggato o in connessione)" });
+      }
 
-  client.initialize();
+      res.setHeader("Content-Type", "image/png");
+      await webQrcode.toFileStream(res, currentQr, { type: "png" });
+    });
+
+    routesRegistered = true;
+  }
+
+  await client.initialize();
 
   }
 
-  connectClient();
+  connectClient().catch((err) => console.error("[WA] Initial connect failed:", err));
 });
 
 /*const client = new Client({
