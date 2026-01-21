@@ -20,10 +20,10 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
       //   clientId: '1',
       //   dataPath: '/usr/src/app/chrome-data'
       // }),
-      // webVersionCache: {
-      //   type: 'remote',
-      //   remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2410.1.html',
-      // },
+      webVersionCache: {
+        type: 'remote',
+        remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/refs/heads/main/html/2.3000.1032242366-alpha.html',
+      },
       puppeteer: {
         // executablePath: "/usr/src/app/puppeteer/chrome/linux-121.0.6167.85/chrome-linux64/chrome",
         executablePath: "/usr/src/app/chrome/linux-139.0.7258.154/chrome-linux64/chrome",
