@@ -10,70 +10,98 @@ const momentTimezone = require('moment-timezone');
 
 let sessionObj = {};
 let currentQr = null;
-let client = null;
-let isClientReady = false;
-let isConnectingClient = false;
-let routesRegistered = false;
-let reconnectTimeout = null;
 
-const WA_VERSION_HTML_DEFAULT = "2.3000.1032171053-alpha.html";
-let resolvedWaVersionHtml = null;
-let didResolveWaVersionHtml = false;
-
-const compareVersionFilenames = (a, b) => {
-  const parseParts = (name) =>
-    name
-      .replace(/\.html$/i, "")
-      .split(".")
-      .map((part) => {
-        const n = parseInt(part, 10);
-        return Number.isFinite(n) ? n : 0;
-      });
-
-  const ap = parseParts(a);
-  const bp = parseParts(b);
-  const len = Math.max(ap.length, bp.length);
-  for (let i = 0; i < len; i++) {
-    const av = ap[i] ?? 0;
-    const bv = bp[i] ?? 0;
-    if (av !== bv) return av - bv;
-  }
-  return 0;
-};
-
-const getWaVersionHtml = async () => {
-  if (didResolveWaVersionHtml) return resolvedWaVersionHtml;
-  didResolveWaVersionHtml = true;
-
-  const fromEnv = process.env.WA_VERSION_HTML;
-  if (fromEnv && typeof fromEnv === "string" && fromEnv.trim()) {
-    resolvedWaVersionHtml = fromEnv.trim();
-    console.log(`[WA] Using WA_VERSION_HTML from env: ${resolvedWaVersionHtml}`);
-    return resolvedWaVersionHtml;
-  }
-
-  try {
-    const resp = await fetch("https://api.github.com/repos/wppconnect-team/wa-version/contents/html", {
-      headers: { "User-Agent": "whatsserver" },
+new Promise(r => setTimeout(r, 1000)).then(() => {
+  let client;
+  
+  const connectClient = () => {
+    client = new Client({
+      // authStrategy: new LocalAuth({
+      //   clientId: '1',
+      //   dataPath: '/usr/src/app/chrome-data'
+      // }),
+      webVersionCache: {
+        type: 'remote',
+        remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2410.1.html',
+      },
+      puppeteer: {
+        // executablePath: "/usr/src/app/puppeteer/chrome/linux-121.0.6167.85/chrome-linux64/chrome",
+        executablePath: "/usr/src/app/chrome/linux-139.0.7258.154/chrome-linux64/chrome",
+        // headless: false,
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-accelerated-2d-canvas',
+            '--no-first-run',
+            '--no-zygote',
+            '--single-process', // Necessario per ambienti con risorse limitate
+            // '--user-data-dir=/usr/src/app/chrome-data'
+            '--disable-gpu'
+        ],
+        userDataDir: '/usr/src/app/chrome-data'
+      }
     });
-    if (!resp.ok) throw new Error(`GitHub API error: ${resp.status}`);
+    console.log('connessione')
+  /*WHATSAPP CONNECTION*/
+  client.on('qr', (qr) => {
+    currentQr = qr;
+    qrcode.generate(qr, { small: true });
+  });
 
-    const items = await resp.json();
-    const htmlFiles = (Array.isArray(items) ? items : [])
-      .filter((i) => i && i.type === "file" && typeof i.name === "string" && i.name.endsWith(".html"))
-      .map((i) => i.name)
-      .filter((n) => n[0] >= "0" && n[0] <= "9");
+  client.on('ready', () => {
+    console.log('Client is ready!');
+    client.getChats().then(async(chats) => {
+      //console.log(chats[0])
+      const group1 = chats.filter(c => c.name?.toLowerCase().includes("Rho"));
+      // const group2 = chats.filter(c => c.name.trim() === "LeadSystem - Ansi Somma");
+      // const group3 = chats.filter(c => c.name.trim().includes("LeadSystem - Universitas (Turro"));
+      // const group4 = chats.filter(c => c.name.trim().includes("LeadSystem - BRA (Polo scolastico europeo)"));
+      //const group3 = chats.filter(c => c.name.trim() === "LeadSystem - Corsi Uni");
+      //const group4 = chats.filter(c => c.name.trim() === "LeadSystem - Delma Formazione");
+      console.log(group1)
+      // console.log(group2)
+      // console.log(group3)
+      // console.log(group4)
+      //console.log(group4)
 
-    htmlFiles.sort(compareVersionFilenames);
-    resolvedWaVersionHtml = htmlFiles.at(-1) || WA_VERSION_HTML_DEFAULT;
-    console.log(`[WA] Using wa-version html: ${resolvedWaVersionHtml}`);
-    return resolvedWaVersionHtml;
-  } catch (err) {
-    resolvedWaVersionHtml = WA_VERSION_HTML_DEFAULT;
-    console.error("[WA] Failed to resolve latest wa-version html. Falling back to default.", err);
-    return resolvedWaVersionHtml;
-  }
-};
+      /*if (group1) {
+        try {
+          await client.sendMessage(group1[0].id._serialized, "Ciao a tutti! Questo è un messaggio di prova.");
+          console.log('Messaggio inviato con successo al gruppo 1');
+        } catch (error) {
+          console.error('Errore nell\'invio del messaggio al gruppo 1:', error);
+        }
+      } else {
+        console.log('Gruppo 1 non trovato');
+      }*/
+      //console.log(group2)
+      //console.log(group3)
+    }).catch((err) => {
+        console.error('Si è verificato un errore durante la ricerca della chat:', err);
+    });
+  });
+  //"whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#v1.26.0",
+  client.on("remote_session_saved", () => {
+    console.log("Sessione salvata!")
+  })
+
+  client.on('disconnect', () => {
+    console.log('Il client WhatsApp si è disconnesso. Tentativo di riconnessione...');
+    setTimeout(connectClient, 5000);
+  });
+
+  client.on('auth_failure', () => {
+    console.log('Fallimento dell\'autenticazione. Riavvio del server...');
+    process.exit(1);
+  });
+
+  app.get("/groups/:query", async (req, res) => {
+    const query = req.params.query;
+    const groups = await client.getChats();
+    const group = groups.filter(g => g.name?.toLowerCase().includes(query.toLowerCase())).map(g =>( {name: g.name, id: g.id._serialized}));
+    res.status(200).json(group);
+  });
 
 const formatDate = (dateString) => {
   const tempDate = new Date(dateString);
@@ -86,117 +114,6 @@ const formatDate = (dateString) => {
 
   return formattedDate;
 };
-
-new Promise(r => setTimeout(r, 1000)).then(() => {
-  const scheduleReconnect = (reason) => {
-    isClientReady = false;
-    currentQr = null;
-
-    if (reconnectTimeout) {
-      clearTimeout(reconnectTimeout);
-    }
-
-    console.log(`[WA] Disconnected (${reason}). Reconnect in 5s...`);
-    reconnectTimeout = setTimeout(() => {
-      reconnectTimeout = null;
-      connectClient().catch((err) => console.error("[WA] Reconnect failed:", err));
-    }, 5000);
-  };
-
-  const connectClient = async () => {
-    if (isConnectingClient) return;
-    isConnectingClient = true;
-
-    isClientReady = false;
-    currentQr = null;
-
-    try {
-      if (client) {
-        try {
-          await client.destroy();
-        } catch (err) {
-          console.error("[WA] Error destroying previous client:", err);
-        } finally {
-          client = null;
-        }
-      }
-
-      const waVersionHtml = await getWaVersionHtml();
-
-      client = new Client({
-        // authStrategy: new LocalAuth({
-        //   clientId: '1',
-        //   dataPath: '/usr/src/app/chrome-data'
-        // }),
-        webVersionCache: {
-          type: 'remote',
-          remotePath: `https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/${waVersionHtml}`,
-        },
-        puppeteer: {
-          // executablePath: "/usr/src/app/puppeteer/chrome/linux-121.0.6167.85/chrome-linux64/chrome",
-          executablePath: "/usr/src/app/chrome/linux-139.0.7258.154/chrome-linux64/chrome",
-          // headless: false,
-          args: [
-              '--no-sandbox',
-              '--disable-setuid-sandbox',
-              '--disable-dev-shm-usage',
-              '--disable-accelerated-2d-canvas',
-              '--no-first-run',
-              '--no-zygote',
-              '--single-process', // Necessario per ambienti con risorse limitate
-              // '--user-data-dir=/usr/src/app/chrome-data'
-              '--disable-gpu'
-          ],
-          userDataDir: '/usr/src/app/chrome-data'
-        }
-      });
-      console.log('connessione')
-    /*WHATSAPP CONNECTION*/
-    client.on('qr', (qr) => {
-      currentQr = qr;
-      qrcode.generate(qr, { small: true });
-    });
-
-    client.on('ready', () => {
-      isClientReady = true;
-      console.log('Client is ready!');
-    });
-
-    client.on("change_state", (state) => {
-      console.log("[WA] State:", state);
-    });
-    //"whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#v1.26.0",
-    client.on("remote_session_saved", () => {
-      console.log("Sessione salvata!")
-    })
-
-    client.on('disconnected', (reason) => {
-      scheduleReconnect(reason);
-    });
-
-    client.on('auth_failure', (message) => {
-      console.error("[WA] Auth failure:", message);
-      scheduleReconnect("auth_failure");
-    });
-
-    if (!routesRegistered) {
-    app.get("/groups/:query", async (req, res) => {
-      if (!client || !isClientReady) {
-        return res.status(503).json({ error: "WhatsApp client not ready" });
-      }
-
-      try {
-        const query = req.params.query;
-        const groups = await client.getChats();
-        const group = groups
-          .filter(g => g.name?.toLowerCase().includes(query.toLowerCase()))
-          .map(g => ({ name: g.name, id: g.id._serialized }));
-        res.status(200).json(group);
-      } catch (err) {
-        console.error("Errore durante /groups:", err);
-        res.status(500).json({ error: "Errore durante la ricerca dei gruppi" });
-      }
-    });
 
   app.post('/webhook-appointment-ecp', async (req, res) => {
     console.log(req.body)
@@ -340,16 +257,11 @@ const leadMessageEpicode = `È entrata una nuova lead per Epicode! contattala su
       await webQrcode.toFileStream(res, currentQr, { type: "png" });
     });
 
-    routesRegistered = true;
+    client.initialize();
+
   }
 
-    await client.initialize();
-    } finally {
-      isConnectingClient = false;
-    }
-  }
-
-  connectClient().catch((err) => console.error("[WA] Initial connect failed:", err));
+  connectClient();
 });
 
 /*const client = new Client({
