@@ -95,6 +95,7 @@ const connectClient = async () => {
   });
 
   // Log messaggi in arrivo
+  /*
   sock.ev.on('messages.upsert', async ({ messages, type }) => {
     if (type === 'notify') {
       for (const msg of messages) {
@@ -108,6 +109,7 @@ const connectClient = async () => {
       }
     }
   });
+  */
 };
 
 // Helper: formatta il numero per WhatsApp
