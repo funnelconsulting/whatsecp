@@ -51,35 +51,35 @@ new Promise(r => setTimeout(r, 1000)).then(() => {
 
   client.on('ready', () => {
     console.log('Client is ready!');
-    client.getChats().then(async(chats) => {
-      //console.log(chats[0])
-      const group1 = chats.filter(c => c.name?.toLowerCase().includes("Rho"));
-      // const group2 = chats.filter(c => c.name.trim() === "LeadSystem - Ansi Somma");
-      // const group3 = chats.filter(c => c.name.trim().includes("LeadSystem - Universitas (Turro"));
-      // const group4 = chats.filter(c => c.name.trim().includes("LeadSystem - BRA (Polo scolastico europeo)"));
-      //const group3 = chats.filter(c => c.name.trim() === "LeadSystem - Corsi Uni");
-      //const group4 = chats.filter(c => c.name.trim() === "LeadSystem - Delma Formazione");
-      console.log(group1)
-      // console.log(group2)
-      // console.log(group3)
-      // console.log(group4)
-      //console.log(group4)
+    // client.getChats().then(async(chats) => {
+    //   //console.log(chats[0])
+    //   const group1 = chats.filter(c => c.name?.toLowerCase().includes("Rho"));
+    //   // const group2 = chats.filter(c => c.name.trim() === "LeadSystem - Ansi Somma");
+    //   // const group3 = chats.filter(c => c.name.trim().includes("LeadSystem - Universitas (Turro"));
+    //   // const group4 = chats.filter(c => c.name.trim().includes("LeadSystem - BRA (Polo scolastico europeo)"));
+    //   //const group3 = chats.filter(c => c.name.trim() === "LeadSystem - Corsi Uni");
+    //   //const group4 = chats.filter(c => c.name.trim() === "LeadSystem - Delma Formazione");
+    //   console.log(group1)
+    //   // console.log(group2)
+    //   // console.log(group3)
+    //   // console.log(group4)
+    //   //console.log(group4)
 
-      /*if (group1) {
-        try {
-          await client.sendMessage(group1[0].id._serialized, "Ciao a tutti! Questo è un messaggio di prova.");
-          console.log('Messaggio inviato con successo al gruppo 1');
-        } catch (error) {
-          console.error('Errore nell\'invio del messaggio al gruppo 1:', error);
-        }
-      } else {
-        console.log('Gruppo 1 non trovato');
-      }*/
-      //console.log(group2)
-      //console.log(group3)
-    }).catch((err) => {
-        console.error('Si è verificato un errore durante la ricerca della chat:', err);
-    });
+    //   /*if (group1) {
+    //     try {
+    //       await client.sendMessage(group1[0].id._serialized, "Ciao a tutti! Questo è un messaggio di prova.");
+    //       console.log('Messaggio inviato con successo al gruppo 1');
+    //     } catch (error) {
+    //       console.error('Errore nell\'invio del messaggio al gruppo 1:', error);
+    //     }
+    //   } else {
+    //     console.log('Gruppo 1 non trovato');
+    //   }*/
+    //   //console.log(group2)
+    //   //console.log(group3)
+    // }).catch((err) => {
+    //     console.error('Si è verificato un errore durante la ricerca della chat:', err);
+    // });
   });
   //"whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#v1.26.0",
   client.on("remote_session_saved", () => {
