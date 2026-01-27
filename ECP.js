@@ -30,6 +30,36 @@ exports.ECP = [
       },
     },
     {
+      _id: "696a5204ed5ba42f787bdf9a",
+      name:  "ERMETE FORMAZIONE DI ELENA NABOT",
+      groupName: "LeadSystem - Ivrea",
+      waId: {
+        server: 'g.us',
+        user: '120363406327311323',
+        _serialized: '120363406327311323@g.us'
+      },
+    },
+    {
+      _id: "696a3abded5ba42f787ba9e4",
+      name:  "ATI FORMAZIONE SRL",
+      groupName: "LeadSystem - ATI Formazione",
+      waId: {
+        server: 'g.us',
+        user: '120363422073510330',
+        _serialized: '120363422073510330@g.us'
+      },
+    },
+    {
+      _id: "69628f45ed5ba42f78744341",
+      name:  "KORACE SRLS",
+      groupName: "LeadSystem - Korace",
+      waId: {
+        server: 'g.us',
+        user: '120363405435979007',
+        _serialized: '120363405435979007@g.us'
+      },
+    },
+    {
       _id: "693a97e2b4456bdc5925e0cc",
       name:  "Centro Scolastico Sant'Antonio s.r.l.",
       groupName: "LeadSystem - Polo Del Sannio",
