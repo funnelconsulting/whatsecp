@@ -30,6 +30,16 @@ exports.ECP = [
       },
     },
     {
+      _id: "6989b9a81d3c0a5a5ff88f18",
+      name:  "GLOBAL EDUCATIONSERVICES SRLS",
+      groupName: "LeadSystem - Global Education Services",
+      waId: {
+        server: 'g.us',
+        user: '120363423320106556',
+        _serialized: '120363423320106556@g.us'
+      },
+    },
+    {
       _id: "696a5204ed5ba42f787bdf9a",
       name:  "ERMETE FORMAZIONE DI ELENA NABOT",
       groupName: "LeadSystem - Ivrea",
