@@ -125,9 +125,9 @@ const formatDate = (dateString) => {
     
       
         //const appointment = new Date(req.body.appointment);
-        const {nome, cognome, telefono, ecpId, utm_medium} = req.body;
+        const {nome, cognome, telefono, ecpId, utm_medium, orientatore} = req.body;
 
-        const message = `La lead ${nome} ${cognome} con ha effettuato l'appuntamento\n• Telefono: ${telefono}\n• Appuntamento: ${appointment.toLocaleDateString()} alle ${appointment.getHours().toString().padStart(2, '0')}:${appointment.getMinutes().toString().padStart(2, '0')}`;
+        const message = `La lead ${nome} ${cognome}${(orientatore && orientatore.nome && orientatore.cognome) ? `, assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''} ha effettuato l'appuntamento\n• Telefono: ${telefono}\n• Appuntamento: ${appointment.toLocaleDateString()} alle ${appointment.getHours().toString().padStart(2, '0')}:${appointment.getMinutes().toString().padStart(2, '0')}`;
         
         const knownEcp = ECP.find(item => item._id === ecpId);
         if (knownEcp) {
