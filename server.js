@@ -121,7 +121,10 @@ const formatDate = (dateString) => {
 
         const minutesOffset = momentTimezone.tz(new Date(), 'Europe/Rome').utcOffset();
 
-        const appointment = new Date(new Date(req.body.appointment).getTime() + minutesOffset * 60000);
+        const appointmentDate = typeof req.body.appointment === 'object' ? req.body.appointment.data : req.body.appointment
+        
+
+        const appointment = new Date(new Date(appointmentDate).getTime() + minutesOffset * 60000);
     
       
         //const appointment = new Date(req.body.appointment);
