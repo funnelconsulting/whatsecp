@@ -190,7 +190,7 @@ ${leads.eventi_calendario?.[0] && leads.eventi_calendario?.[0].data !== "" ? `�
         const orientatore = req.body.orientatore ? req.body.orientatore : null;
           const knownEcp = ECP.find(item => item._id === ecpId);
             if (knownEcp) {
-              const leadMessage = `È entrata una nuova lead${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}`;
+              const leadMessage = `È entrata una nuova lead${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono} \n• ${leads.fonte_comparacorsi === 'landing-orientamento-lauree' || leads.fonte_comparacorsi === 'questionario-orientamento-lauree' ? 'Funnel Orientamento' : ''}`;
               const leadMessageFormatemp = `È entrata una nuova lead per Formatemp! contattala subito.
 •⁠ ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}
 •⁠ ${leads.utm_campaign}`
