@@ -130,6 +130,8 @@ const formatDate = (dateString) => {
         //const appointment = new Date(req.body.appointment);
         const {nome, cognome, telefono, ecpId, utm_medium, orientatore, fonte_comparacorsi} = req.body;
 
+        console.log('APPOINTMENT DATE', new Date(appointmentDate).getTime() + minutesOffset * 60000)
+
         console.log('NOI SIAMO QUI', fonte_comparacorsi, appointmentDate, req.body.appointment)
 
         const message = `La lead ${nome} ${cognome}${(orientatore && orientatore.nome && orientatore.cognome) ? `, assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''} ha effettuato l'appuntamento\n• Telefono: ${telefono}\n• Appuntamento: ${appointment.toLocaleDateString()} alle ${appointment.getHours().toString().padStart(2, '0')}:${appointment.getMinutes().toString().padStart(2, '0')}\n• ${fonte_comparacorsi === 'landing-orientamento-lauree' || fonte_comparacorsi === 'questionario-orientamento-lauree' ? 'Fonte: Comparatore Orientamento' : ''}`;
