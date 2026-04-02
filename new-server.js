@@ -328,7 +328,11 @@ app.post('/webhook-lead-ecp-notification', async (req, res) => {
     
     const knownEcp = ECP.find(item => item._id === ecpId);
     if (knownEcp) {
-      const leadMessage = `È entrata una nuova lead${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}`;
+
+      const funnelOrientamentoMessage = leads.fonte_comparacorsi === 'landing-orientamento-lauree' || leads.fonte_comparacorsi === 'questionario-orientamento-lauree' ? 
+      `${leads.eventi_calendario && leads.eventi_calendario.length > 0 ? '\n•Data Appuntamento: ' + formatDate(leads.eventi_calendario?.[0].data) : ''}\n•Fonte: Comparatore Orientamento` : '';
+
+      const leadMessage = `È entrata una nuova lead${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}${funnelOrientamentoMessage}`;
       
       const leadMessageFormatemp = `È entrata una nuova lead per Formatemp! contattala subito.
 •⁠ ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}
