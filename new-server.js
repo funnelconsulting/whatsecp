@@ -266,11 +266,12 @@ app.post('/webhook-appointment-ecp', async (req, res) => {
   console.log(req.body);
   try {
     const minutesOffset = momentTimezone.tz(new Date(), 'Europe/Rome').utcOffset();
-    const appointment = new Date(new Date(req.body.appointment).getTime() + minutesOffset * 60000);
+    const appointmentDate = typeof req.body.appointment === 'object' ? req.body.appointment.data : req.body.appointment
+    const appointment = new Date(new Date(appointmentDate).getTime() + minutesOffset * 60000);
     
-    const { nome, cognome, telefono, ecpId, utm_medium } = req.body;
+    const { nome, cognome, telefono, ecpId, utm_medium, fonte_comparacorsi } = req.body;
 
-    const message = `La lead ${nome} ${cognome} con ha effettuato l'appuntamento\n• Telefono: ${telefono}\n• Appuntamento: ${appointment.toLocaleDateString()} alle ${appointment.getHours().toString().padStart(2, '0')}:${appointment.getMinutes().toString().padStart(2, '0')}`;
+    const message = `La lead ${nome} ${cognome} con ha effettuato l'appuntamento\n• Telefono: ${telefono}\n• Appuntamento: ${appointment.toLocaleDateString()} alle ${appointment.getHours().toString().padStart(2, '0')}:${appointment.getMinutes().toString().padStart(2, '0')}\n• ${fonte_comparacorsi === 'landing-orientamento-lauree' || fonte_comparacorsi === 'questionario-orientamento-lauree' ? 'Fonte: Comparatore Orientamento' : ''}`;
     
     const knownEcp = ECP.find(item => item._id === ecpId);
     if (knownEcp) {
