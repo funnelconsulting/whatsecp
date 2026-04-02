@@ -116,7 +116,7 @@ const formatDate = (dateString) => {
 };
 
   app.post('/webhook-appointment-ecp', async (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     try {
 
         const minutesOffset = momentTimezone.tz(new Date(), 'Europe/Rome').utcOffset();
