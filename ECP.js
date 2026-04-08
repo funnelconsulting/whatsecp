@@ -20,6 +20,26 @@ exports.ECP = [
       },
     },
     {
+      _id: "68f0bbd5b127f93c7d90c460",
+      name:  "X-FORMAZIONE DI CRISEO NICOLA",
+      groupName: "LeadSystem - Rho",
+      waId: {
+        server: 'g.us',
+        user: '120363421744878348',
+        _serialized: '120363421744878348@g.us'
+      },
+    },
+    {
+      _id: "69cb8a5f838392d9528a6dc2",
+      name:  "Funnel Consulting",
+      groupName: "ComparaCorsi - Orientamento",
+      waId: {
+        server: 'g.us',
+        user: '120363406973570810',
+        _serialized: '120363406973570810@g.us'
+      },
+    },
+    {
       _id: "69400a2c1dd4dd5a570d7eea",
       name:  "Epicode",
       groupName: "Professional AI Epicode",
