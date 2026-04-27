@@ -40,6 +40,16 @@ exports.ECP = [
       },
     },
     {
+      _id: "680805b50af1f60d953852a4",
+      name:  "Mattia Test",
+      groupName: "Test notifiche ECP comparacorsi",
+      waId: {
+        server: 'g.us',
+        user: '120363406581496817',
+        _serialized: '120363406581496817@g.us'
+      },
+    },
+    {
       _id: "69400a2c1dd4dd5a570d7eea",
       name:  "Epicode",
       groupName: "Professional AI Epicode",
