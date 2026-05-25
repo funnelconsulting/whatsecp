@@ -28,8 +28,12 @@ WORKDIR /usr/src/app
 # Copy package manager lock (optional optimization)
 # COPY package.json pnpm-lock.yaml* ./
 
-# Install pnpm via corepack
-RUN corepack enable && corepack prepare pnpm@latest --activate
+# Install pnpm via corepack (pin version; @latest enables strict build approval that breaks CI)
+RUN corepack enable && corepack prepare pnpm@10.27.0 --activate
+
+# Chrome is installed separately below; skip puppeteer postinstall downloads
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV PNPM_CONFIG_STRICT_DEP_BUILDS=false
 
 RUN npx --yes @puppeteer/browsers@latest install chrome@139.0.7258.154;
 RUN apt-get update;
