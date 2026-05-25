@@ -302,7 +302,7 @@ app.post('/webhook-lead-no-comparacorsi', async (req, res) => {
 
     const leadMessage = `È entrata una nuova lead ${fonte ? `da ${fonte}` : ''}${orientatore ? `assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}`;
   
-    await sendWhatsWhatsAppMessage(knownEcp.waId._serialized, leadMessage);
+    await sendWhatsAppMessage(knownEcp.waId._serialized, leadMessage);
 
 
     console.log("Messaggio inviato a", knownEcp.name, "per la lead:", leads.nome, leads.cognome);
