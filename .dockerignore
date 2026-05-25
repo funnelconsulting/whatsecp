@@ -1,0 +1,12 @@
+node_modules
+.pnpm-store
+.git
+.env
+chrome-data
+puppeteer
+chrome
+baileys-session
+.wwebjs_cache
+.wwebjs_auth
+dataSession
+*.zip

@@ -32,6 +32,7 @@ WORKDIR /usr/src/app
 RUN corepack enable && corepack prepare pnpm@10.27.0 --activate
 
 # Chrome is installed separately below; skip puppeteer postinstall downloads
+ENV CI=true
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV PNPM_CONFIG_STRICT_DEP_BUILDS=false
 
