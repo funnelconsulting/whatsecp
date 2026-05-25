@@ -287,6 +287,34 @@ app.post('/webhook-appointment-ecp', async (req, res) => {
   res.status(200).send('Messaggio inviato con successo agli ECP.');
 });
 
+
+app.post('/webhook-lead-no-comparacorsi', async (req, res) => {
+  console.log(req.body);
+  try {
+    const ecpId = req.body.ecpId; 
+    const leads = req.body.leads;
+    const orientatore = req.body.orientatore ? req.body.orientatore : null;
+    const fonte = req.body.fonte;
+    
+
+    const knownEcp = ECP.find(item => item._id === ecpId);
+
+
+    const leadMessage = `È entrata una nuova lead ${fonte ? `da ${fonte}` : ''}${orientatore ? `assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}`;
+  
+    await sendWhatsWhatsAppMessage(knownEcp.waId._serialized, leadMessage);
+
+
+    console.log("Messaggio inviato a", knownEcp.name, "per la lead:", leads.nome, leads.cognome);
+    res.status(200).send('Messaggi inviati con successo agli ECP.');
+  } catch (error) {
+    console.error('Errore durante l\'invio dei messaggi:', error);
+    res.status(500).send('Errore durante l\'invio dei messaggi.');
+  }
+  
+  
+});
+
 app.post('/webhook-lead-ecp-prequalifica', async (req, res) => {
   console.log(req.body);
   try {
