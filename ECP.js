@@ -90,6 +90,16 @@ exports.ECP = [
       },
     },
     {
+      _id: "6a2a74d9a615cc0d1b64be25",
+      name:  "Ares University srl",
+      groupName: "LeadSystem - Ares",
+      waId: {
+        server: 'g.us',
+        user: '120363406320634578@g.us',
+        _serialized: '120363406320634578@g.us'
+      },
+    },
+    {
       _id: "69628f45ed5ba42f78744341",
       name:  "KORACE SRLS",
       groupName: "LeadSystem - Korace",
