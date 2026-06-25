@@ -95,8 +95,18 @@ exports.ECP = [
       groupName: "LeadSystem - Ares",
       waId: {
         server: 'g.us',
-        user: '120363406320634578@g.us',
+        user: '120363406320634578',
         _serialized: '120363406320634578@g.us'
+      },
+    },
+    {
+      _id: "6a390d939a076d4b2c932bc6",
+      name:  "Comparacorsi Orientamento Formazione",
+      groupName: "ComparaCorsi - Orientamento",
+      waId: {
+        server: 'g.us',
+        user: '120363406973570810',
+        _serialized: '120363406973570810@g.us'
       },
     },
     {
