@@ -332,7 +332,7 @@ ${leads.eventi_calendario?.[0] && leads.eventi_calendario?.[0].data !== "" ? `�
       const leadMessageIrraggiungibile = `È entrata una nuova lead non qualificata da richiamare${(orientatore && orientatore.nome && orientatore.cognome) ? ` assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.
 •⁠  ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}`;
       
-      const leadMessage = newStatus === "SQL" ? leadMessageSQL : leadMessageIrraggiungibile;
+      const leadMessage = (newStatus === "SQL" || 'qualificata') ? leadMessageSQL : leadMessageIrraggiungibile;
       
       await sendWhatsAppMessage(knownEcp.waId._serialized, leadMessage);
       console.log("Messaggio inviato a", knownEcp.name, "per la lead:", leads.nome, leads.cognome);
