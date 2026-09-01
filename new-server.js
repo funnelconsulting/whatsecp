@@ -346,6 +346,24 @@ ${leads.eventi_calendario?.[0] && leads.eventi_calendario?.[0].data !== "" ? `�
   }
 });
 
+app.post('/webhook-lead-inbound-amministrativi', async (req, res) => {
+  console.log(req.body);
+  try {
+    const lead = req.body;
+
+    const knownEcp = ECP.find(item => item._id === lead.user_id);
+
+    const message = `È entrata una nuova lead Whatsapp inbound! contattala subito.\n• ${lead.nome} ${lead.cognome} - ${lead.numeroTelefono || lead.telefono}`;
+    await sendWhatsAppMessage(knownEcp.waId._serialized, message);
+    console.log("Messaggio inviato a", knownEcp.name, "per la lead:", lead.nome, lead.cognome);
+    res.status(200).send('Messaggi inviati con successo agli ECP.');
+
+  } catch (error) {
+    console.error('Errore durante l\'invio dei messaggi:', error);
+    res.status(500).send('Errore durante l\'invio dei messaggi.');
+  }
+})
+
 app.post('/webhook-lead-ecp-notification', async (req, res) => {
   console.log(req.body);
   try {
