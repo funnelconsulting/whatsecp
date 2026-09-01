@@ -353,7 +353,9 @@ app.post('/webhook-lead-inbound-amministrativi', async (req, res) => {
 
     const knownEcp = ECP.find(item => item._id === lead.user_id);
 
-    const message = `È entrata una nuova lead Whatsapp inbound! contattala subito.\n• ${lead.nome} ${lead.cognome} - ${lead.numeroTelefono || lead.telefono}`;
+    const assegnata_a = lead.assegnata_a ? `assegnata a ${lead.assegnata_a}` : '';
+
+    const message = `È entrata una nuova lead Whatsapp inbound ${assegnata_a}! contattala subito.\n• ${lead.nome} ${lead.cognome} - ${lead.numeroTelefono || lead.telefono}`;
     await sendWhatsAppMessage(knownEcp.waId._serialized, message);
     console.log("Messaggio inviato a", knownEcp.name, "per la lead:", lead.nome, lead.cognome);
     res.status(200).send('Messaggi inviati con successo agli ECP.');
