@@ -315,6 +315,36 @@ app.post('/webhook-lead-no-comparacorsi', async (req, res) => {
   
 });
 
+app.post('/webhook-quoto-new-sub', async (req, res) => {
+  console.log(req.body);
+  try {
+    const company_name = req.body.company_name; 
+    const plan = req.body.plan;
+
+    const chats = await sock.groupFetchAllParticipating();
+
+    let serialized = '';
+
+    chats.forEach(chat => {
+      if (chat.subject.toLowerCase().includes('quoto')) {
+        serialized = chat.id;
+      }
+    });
+
+    const leadMessage = `NUOVO CLIENTE SU QUOTO!!!!\n• ${company_name}\n• ${plan}`;
+  
+    await sendWhatsAppMessage(serialized, leadMessage);
+
+    console.log("Messaggio inviato a Quoto Group Chat", "per la lead:", leads.nome, leads.cognome);
+    res.status(200).send('Messaggi inviati con successo agli ECP.');
+  } catch (error) {
+    console.error('Errore durante l\'invio dei messaggi:', error);
+    res.status(500).send('Errore durante l\'invio dei messaggi.');
+  }
+  
+  
+});
+
 app.post('/webhook-lead-ecp-prequalifica', async (req, res) => {
   console.log(req.body);
   try {
