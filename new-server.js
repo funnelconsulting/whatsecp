@@ -323,13 +323,7 @@ app.post('/webhook-quoto-new-sub', async (req, res) => {
 
     const chats = await sock.groupFetchAllParticipating();
 
-    let serialized = '';
-
-    chats.forEach(chat => {
-      if (chat.subject.toLowerCase().includes('quoto')) {
-        serialized = chat.id;
-      }
-    });
+    let serialized = '120363429192903570@g.us';
 
     const leadMessage = `NUOVO CLIENTE SU QUOTO!!!!\n• ${company_name}\n• ${plan}`;
   
