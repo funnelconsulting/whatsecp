@@ -299,6 +299,8 @@ app.post('/webhook-lead-no-comparacorsi', async (req, res) => {
 
     const knownEcp = ECP.find(item => item._id === ecpId);
 
+    console.log('ECP ID:', ecpId, 'ECP:', knownEcp)
+
 
     const leadMessage = `È entrata una nuova lead ${fonte ? `da ${fonte}` : ''} ${orientatore ? `assegnata a ${orientatore.nome} ${orientatore.cognome}` : ''}! contattala subito.\n• ${leads.nome} ${leads.cognome} - ${leads.numeroTelefono || leads.telefono}`;
   
